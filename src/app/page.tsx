@@ -1,17 +1,31 @@
 import MainLayout from "@/components/layout/MainLayout";
-import { Typography, Box } from "@mui/material";
+import PayingGames from "@/components/Pages/HomePage/PayingGames";
+import TrendingContainer from "@/components/Pages/HomePage/Trending/TrendingContainer";
+import UserInfo from "@/components/Pages/HomePage/UserInfo";
+import { Box } from "@mui/material";
 
 export default function Page() {
   return (
     <MainLayout>
-      <Box className='app-container'>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Casino & Sports Platform
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Main content area - ready for casino and sports components
-        </Typography>
+      {/* top section */}
+      <Box
+        sx={{
+          color: "#ffffff",
+          display: "flex",
+          flexDirection: { lg: "row", xs: "column" },
+          justifyContent: { lg: "space-between", xs: "start" },
+          alignItems: { lg: "center", xs: "start" },
+          gap: { lg: "50px", xs: "16px" },
+          marginTop: { lg: "20px", xs: 0 },
+          marginBottom: { lg: "20px", xs: 0 },
+        }}
+        className="app-container"
+      >
+        <UserInfo />
+        <PayingGames />
       </Box>
+      {/* trending page section */}
+      <TrendingContainer />
     </MainLayout>
   );
 }
