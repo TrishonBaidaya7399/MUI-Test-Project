@@ -14,8 +14,10 @@ body {
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: oklch(18.425% 0.00433 308.037);
+  --background-dark: oklch(16.886% 0.00208 286.046);
+  --background-gray: oklch(27.129% 0.00747 297.237);
+  --foreground: oklch(20.264% 0.0061 300.906);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -50,8 +52,10 @@ body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: oklch(18.425% 0.00433 308.037);
+  --background-dark: oklch(16.886% 0.00208 286.046);
+  --background-gray: oklch(27.129% 0.00747 297.237);
+  --foreground: oklch(20.264% 0.0061 300.906);
   --card: oklch(0.145 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
@@ -86,6 +90,8 @@ body {
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-dark: var(--background-dark);
+  --color-background-gray: var(--background-gray);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
