@@ -411,7 +411,7 @@ export default function AppSidebar() {
               )}
             </Box>
           ))}
-          <ListItem disablePadding>
+          {/* <ListItem disablePadding>
             <ListItemButton
               sx={{
                 borderRadius: 1,
@@ -439,7 +439,7 @@ export default function AppSidebar() {
                 style={{ color: "#888888", fontSize: 20 }}
               />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
         </List>
       </Box>
     </Box>
