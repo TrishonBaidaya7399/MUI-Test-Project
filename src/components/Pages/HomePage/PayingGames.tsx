@@ -21,7 +21,7 @@ export default function PayingGames() {
     <Box
       sx={{
         display: "flex",
-        gap: { xs: "16px", lg: "60px" },
+        gap: { xl: "60px", lg: "16px", xs: "16px" },
         marginInline: 'auto',
         flexDirection: { xs: "column", lg: "row" },
         justifyContent: "space-between",
@@ -43,7 +43,7 @@ export default function PayingGames() {
             placeholder="blur"
             blurDataURL={game?.blurUrl}
             height={250}
-            style={{ objectFit: "cover", borderRadius: "10px", width: '100%' }}
+            style={{ objectFit: "cover", borderRadius: "10px" }}
             priority={index === 0}
             sizes="(max-width: 600px) 100vw, 50vw"
           />
