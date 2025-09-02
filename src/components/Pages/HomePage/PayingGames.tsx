@@ -22,7 +22,7 @@ export default function PayingGames() {
       sx={{
         display: "flex",
         gap: { xl: "60px", lg: "16px", xs: "16px" },
-        marginInline: 'auto',
+        marginInline: "auto",
         flexDirection: { xs: "column", lg: "row" },
         justifyContent: "space-between",
       }}
@@ -36,17 +36,28 @@ export default function PayingGames() {
             borderRadius: "10px",
           }}
         >
-          <Image
-            src={game.imageUrl}
-            alt={`${game.title} card`}
-            width={400}
-            placeholder="blur"
-            blurDataURL={game?.blurUrl}
-            height={250}
-            style={{ objectFit: "cover", borderRadius: "10px" }}
-            priority={index === 0}
-            sizes="(max-width: 600px) 100vw, 50vw"
-          />
+          <Box
+            sx={{
+              width: { lg: "400px", xs: "100%" },
+              maxWidth: { lg: "400px", xs: "100%" },
+            }}
+          >
+            <Image
+              src={game.imageUrl}
+              alt={`${game.title} card`}
+              width={400}
+              placeholder="blur"
+              blurDataURL={game?.blurUrl}
+              height={250}
+              style={{
+                objectFit: "cover",
+                borderRadius: "10px",
+                width: "100%",
+              }}
+              priority={index === 0}
+              sizes="(max-width: 600px) 100vw, 50vw"
+            />
+          </Box>
           <Box
             sx={{
               color: "var(--white)",
