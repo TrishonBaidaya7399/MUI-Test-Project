@@ -1,0 +1,38 @@
+export const mockPromotions = [
+  {
+    type: "Promotion",
+    title: "Team Vitality",
+    subTitle: "Kill Target Prize Pool",
+    href: "#",
+    image: "/promotions/promotion1.avif",
+    blurUrl: "/promotions/promotion1.webp",
+    _id: "1",
+  },
+  {
+    type: "New Releases",
+    title: "Angel vs Sinner",
+    subTitle: "New Enhanced RTP game",
+    href: "#",
+    image: "/promotions/promotion2.avif",
+    blurUrl: "/promotions/promotion2.webp",
+    _id: "2",
+  },
+  {
+    type: "Promotion",
+    title: "Frankie's Ebor Raffle",
+    subTitle: "Share in $40,000",
+    href: "#",
+    image: "/promotions/promotion3.avif",
+    blurUrl: "/promotions/promotion3.webp",
+    _id: "3",
+  },
+  {
+    type: "Special Offer",
+    title: "Golden Tournament",
+    subTitle: "Win a $50,000 Jackpot",
+    href: "#",
+    image: "/promotions/promotion1.avif",
+    blurUrl: "/promotions/promotion1.webp",
+    _id: "4",
+  },
+];

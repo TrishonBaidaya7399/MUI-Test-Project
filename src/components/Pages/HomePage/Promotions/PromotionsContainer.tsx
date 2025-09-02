@@ -2,39 +2,43 @@
 import { Box, Typography, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useRef, useState, useEffect } from "react";
-import GameCard from "./GameCard";
+import PromotionCard from "./PromotionCard";
 
-interface TrendingItem {
-  rank: number;
+export interface PromotionItem {
+  type: string;
   title: string;
+  subTitle: string;
+  href: string;
   image: string;
-  players: number;
-  category: string;
+  blurUrl?: string;
+  _id: string;
 }
 
-interface TrendingSectionProps {
+interface PromotionsProps {
   title: string;
-  items: TrendingItem[];
-  searchTerm: string;
+  items: PromotionItem[];
 }
 
-export default function TrendingSection({
-  title,
-  items,
-  searchTerm,
-}: TrendingSectionProps) {
+export default function PromotionsContainer({ title, items }: PromotionsProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [cardWidth, setCardWidth] = useState(392);
 
-  const filteredItems = items.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  useEffect(() => {
+    const updateCardWidth = () => {
+      if (scrollRef.current && scrollRef.current.firstChild) {
+        setCardWidth(scrollRef.current.firstChild.clientWidth);
+      }
+    };
+    updateCardWidth();
+    window.addEventListener("resize", updateCardWidth);
+    return () => window.removeEventListener("resize", updateCardWidth);
+  }, []);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const cardWidth = 200; // Pixel width of each card
-      const gap = 16; // Gap between cards
+      const gap = 16;
       const scrollAmount = cardWidth + gap;
       const newScroll =
         scrollRef.current.scrollLeft +
@@ -47,26 +51,28 @@ export default function TrendingSection({
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1); // Small threshold to avoid edge case
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
     }
   };
 
   useEffect(() => {
     checkScroll();
-  }, [filteredItems]);
+  }, []);
 
   return (
-    <Box sx={{ mb: "30px", width: "100%", boxSizing: "border-box" }}>
+    <Box sx={{ mb: "30px", width: "100%", boxSizing: "border-box" }} className='app-container'>
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           mb: 2,
-          // px: 2,
         }}
       >
-        <Typography variant="h6" sx={{ color: "var(--white)", fontSize: "18px" }}>
+        <Typography
+          variant="h6"
+          sx={{ color: "var(--white)", fontSize: "18px" }}
+        >
           {title}
         </Typography>
         <Box>
@@ -74,7 +80,7 @@ export default function TrendingSection({
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
             sx={{
-              color: canScrollLeft ? "var(--white)" : "var(--placeholder)", 
+              color: canScrollLeft ? "var(--white)" : "var(--placeholder)",
               borderRadius: "4px",
               border: "1px solid var(--stroke)",
               padding: "6px",
@@ -91,13 +97,13 @@ export default function TrendingSection({
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
             sx={{
-              color: canScrollRight ?  "var(--white)" : "var(--placeholder)",
+              color: canScrollRight ? "var(--white)" : "var(--placeholder)",
               borderRadius: "4px",
               border: "1px solid var(--stroke)",
               padding: "6px",
               "&:disabled": {
                 borderColor: "var(--placeholder)",
-                "& svg": { color: "var(placeholder)" },
+                "& svg": { color: "var(--placeholder)" },
               },
             }}
           >
@@ -111,23 +117,23 @@ export default function TrendingSection({
           display: "flex",
           overflowX: "auto",
           gap: "16px",
-          // padding: "0 16px ",
           "&::-webkit-scrollbar": { display: "none" },
           scrollbarWidth: "none",
           width: "100%",
           boxSizing: "border-box",
+          flexWrap: "nowrap",
+          maxWidth: "100vw",
+          "@media (max-width: 768px)": {
+            padding: "0 8px",
+          },
+          "@media (max-width: 480px)": {
+            padding: "0 4px",
+          },
         }}
         onScroll={checkScroll}
       >
-        {filteredItems.map((item) => (
-          <GameCard
-            key={item.title}
-            rank={item.rank}
-            title={item.title}
-            image={item.image}
-            players={item.players}
-            category={item.category}
-          />
+        {items.map((item) => (
+          <PromotionCard item={item} key={item._id} />
         ))}
       </Box>
     </Box>

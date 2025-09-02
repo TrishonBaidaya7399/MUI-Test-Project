@@ -20,6 +20,7 @@ body {
   --background: oklch(18.425% 0.00433 308.037);
   --background-dark: oklch(16.886% 0.00208 286.046);
   --background-gray: oklch(27.129% 0.00747 297.237);
+  --background-card: oklch(22.925% 0.00779 297.142);
   --foreground: oklch(20.264% 0.0061 300.906);
   --white: oklch(100% 0.00011 271.152);
   --placeholder: oklch(100% 0.00011 271.152 / 0.15);
