@@ -14,6 +14,7 @@ import { useState } from "react";
 import { mockBetsData } from "./mockBetsData";
 import BitCoinSVG from "@/components/svg_icons/BitCoinSVG";
 import EthereumSVG from "@/components/svg_icons/EthereumSVG";
+import PointerIcon from "@/components/svg_icons/PointerIcon";
 
 interface BetItem {
   game: string;
@@ -44,17 +45,35 @@ const BetsTable = () => {
           "&:nth-of-type(odd)": { backgroundColor: "var(--background-card)" },
           "&:nth-of-type(even)": { backgroundColor: "var(--background-dark)" },
           height: "48px",
-          marginTop: {lg: '36px', x: '16px'}
+          marginTop: { lg: "36px", xs: "16px" },
         }}
       >
         <TableCell
-          sx={{ color: "var(--white)", padding: "8px", borderBottom: "none" }}
+          sx={{
+            color: "var(--white)",
+            padding: "8px",
+            borderBottom: "none",
+            display: "flex",
+            flexDirection: "row",
+            gap: 1,
+            alignItems: "center",
+          }}
         >
+          <PointerIcon />
           {row.game}
         </TableCell>
         <TableCell
-          sx={{ color: "var(--white)", padding: "8px", borderBottom: "none" }}
+          sx={{
+            color: "var(--white)",
+            padding: "8px",
+            borderBottom: "none",
+            // display: "flex",
+            // flexDirection: "row",
+            // gap: 1,
+            // alignItems: "center",
+          }}
         >
+          {/* <PointerIcon />  */}
           {row.user}
         </TableCell>
         <TableCell
@@ -74,7 +93,7 @@ const BetsTable = () => {
           }}
         >
           {row.betAmount}{" "}
-          {row?.type === "bitcoin" ? <BitCoinSVG /> : <EthereumSVG />}
+          {row.type === "bitcoin" ? <BitCoinSVG /> : <EthereumSVG />}
         </TableCell>
         <TableCell
           sx={{ color: "var(--white)", padding: "8px", borderBottom: "none" }}
@@ -83,9 +102,7 @@ const BetsTable = () => {
         </TableCell>
         <TableCell
           sx={{
-            color: row?.payout.startsWith("-")
-              ? "var(--white)"
-              : "var(--green)",
+            color: row.payout.startsWith("-") ? "var(--white)" : "var(--green)",
             padding: "8px",
             borderBottom: "none",
             display: "flex",
@@ -95,23 +112,35 @@ const BetsTable = () => {
           }}
         >
           {row.payout}{" "}
-          {row?.type === "bitcoin" ? <BitCoinSVG /> : <EthereumSVG />}
+          {row.type === "bitcoin" ? <BitCoinSVG /> : <EthereumSVG />}
         </TableCell>
       </TableRow>
     ));
   };
 
   return (
-    <Box sx={{ background: "var(--background-dark)" }}>
+    <Box
+      sx={{
+        backgroundColor: "var(--background-dark)",
+        width: "100%",
+        overflowX: "hidden",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
           gap: "16px",
           mb: "10px",
-
           padding: "8px",
-          background: "var(--foreground)",
+          backgroundColor: "var(--foreground)",
           borderRadius: 1,
+          overflowX: "auto",
+          whiteSpace: "nowrap",
+          "@media (max-width: 600px)": {
+            flexDirection: "column",
+            gap: "8px",
+            padding: "4px",
+          },
         }}
       >
         <Typography
@@ -124,6 +153,7 @@ const BetsTable = () => {
               selectedTab === 0 ? "var(--primary)" : "transparent",
             borderRadius: 1,
             cursor: "pointer",
+            display: "inline-block",
           }}
           onClick={() => handleTabChange(null, 0)}
         >
@@ -139,6 +169,7 @@ const BetsTable = () => {
               selectedTab === 1 ? "var(--primary)" : "transparent",
             borderRadius: 1,
             cursor: "pointer",
+            display: "inline-block",
           }}
           onClick={() => handleTabChange(null, 1)}
         >
@@ -154,83 +185,94 @@ const BetsTable = () => {
               selectedTab === 2 ? "var(--primary)" : "transparent",
             borderRadius: 1,
             cursor: "pointer",
+            display: "inline-block",
           }}
           onClick={() => handleTabChange(null, 2)}
         >
           Race Leaderboard
         </Typography>
       </Box>
-      <Table
-        sx={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}
-      >
-        <TableHead>
-          <TableRow
-            sx={{ backgroundColor: "var(--background-dark)", height: "48px" }}
-          >
-            <TableCell
-              sx={{
-                color: "var(--text-gray)",
-                padding: "8px",
-                borderBottom: "none",
-                fontWeight: 500,
-              }}
+      <Box sx={{ width: "100%", overflowX: "auto" }}>
+        <Table
+          sx={{
+            width: "100%",
+            minWidth: "1200px",
+            borderCollapse: "separate",
+            borderSpacing: 0,
+            "@media (max-width: 600px)": {
+              minWidth: "1200px",
+            },
+          }}
+        >
+          <TableHead>
+            <TableRow
+              sx={{ backgroundColor: "var(--background-dark)", height: "48px" }}
             >
-              Game
-            </TableCell>
-            <TableCell
-              sx={{
-                color: "var(--text-gray)",
-                padding: "8px",
-                borderBottom: "none",
-                fontWeight: 500,
-              }}
-            >
-              User
-            </TableCell>
-            <TableCell
-              sx={{
-                color: "var(--text-gray)",
-                padding: "8px",
-                borderBottom: "none",
-                fontWeight: 500,
-              }}
-            >
-              Time
-            </TableCell>
-            <TableCell
-              sx={{
-                color: "var(--text-gray)",
-                padding: "8px",
-                borderBottom: "none",
-                fontWeight: 500,
-              }}
-            >
-              Bet Amount
-            </TableCell>
-            <TableCell
-              sx={{
-                color: "var(--text-gray)",
-                padding: "8px",
-                borderBottom: "none",
-                fontWeight: 500,
-              }}
-            >
-              Multiplier
-            </TableCell>
-            <TableCell
-              sx={{
-                color: "var(--text-gray)",
-                padding: "8px",
-                borderBottom: "none",
-                fontWeight: 500,
-              }}
-            >
-              Payout
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>{renderTableData()}</TableBody>
-      </Table>
+              <TableCell
+                sx={{
+                  color: "var(--text-gray)",
+                  padding: "8px",
+                  borderBottom: "none",
+                  fontWeight: 500,
+                }}
+              >
+                Game
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "var(--text-gray)",
+                  padding: "8px",
+                  borderBottom: "none",
+                  fontWeight: 500,
+                }}
+              >
+                User
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "var(--text-gray)",
+                  padding: "8px",
+                  borderBottom: "none",
+                  fontWeight: 500,
+                }}
+              >
+                Time
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "var(--text-gray)",
+                  padding: "8px",
+                  borderBottom: "none",
+                  fontWeight: 500,
+                }}
+              >
+                Bet Amount
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "var(--text-gray)",
+                  padding: "8px",
+                  borderBottom: "none",
+                  fontWeight: 500,
+                }}
+              >
+                Multiplier
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "var(--text-gray)",
+                  padding: "8px",
+                  borderBottom: "none",
+                  fontWeight: 500,
+                }}
+              >
+                Payout
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>{renderTableData()}</TableBody>
+        </Table>
+      </Box>
     </Box>
   );
 };
