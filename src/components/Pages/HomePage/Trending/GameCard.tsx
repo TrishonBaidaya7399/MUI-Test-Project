@@ -13,6 +13,7 @@ interface GameCardProps {
   title: string;
   image: string;
   players: number;
+  category: string; // Added category prop to match the design
 }
 
 export default function GameCard({
@@ -20,26 +21,35 @@ export default function GameCard({
   title,
   image,
   players,
+  category,
 }: GameCardProps) {
   return (
     <Card
       sx={{
-        width: { xs: 140, sm: 160, md: 180 },
+        minWidth: "144px", 
+        height: "212px",
         background: "transparent",
         boxShadow: "none",
         position: "relative",
         border: "none",
+        overflow: "hidden", 
       }}
     >
-      <Box sx={{ position: "relative" }}>
-        <CardMedia>
+      <Box sx={{ position: "relative", width: "100%", height: "188px" }}>
+        <CardMedia sx={{ width: "100%", height: "100%" }}>
           <Image
             src={image}
             alt={title}
-            width={180}
-            height={240}
-            style={{ borderRadius: 8, objectFit: "cover" }}
-            sizes="(max-width: 600px) 140px, (max-width: 900px) 160px, 180px"
+            width={144}
+            height={188}
+            loading="lazy"
+            style={{
+              borderRadius: 8,
+              objectFit: "cover",
+              width: "100%",
+              height: "100%",
+            }}
+            sizes="(max-width: 600px) 140px, (max-width: 900px) 190px, 144px"
           />
         </CardMedia>
         <Chip
@@ -48,15 +58,21 @@ export default function GameCard({
             position: "absolute",
             top: 8,
             left: 8,
-            bgcolor: "#000000",
-            color: "#ffffff",
+            bgcolor: "var(--background-dark)", // Dark background to match design
+            color: "var(--white)",
             fontWeight: "bold",
             borderRadius: "50%",
+            width: "24px",
+            height: "24px",
+            fontSize: "12px",
+            display: 'flex', 
+            alignItems: 'center',
+            justifyContent: 'center',
+            p: 0
           }}
         />
       </Box>
-
-      <CardContent sx={{ p: 1, textAlign: "center" }}>
+      <CardContent sx={{ p: 1, pl: 0, textAlign: "center", pt: 0 }}>
         <Box
           sx={{
             display: "flex",
@@ -64,6 +80,8 @@ export default function GameCard({
             alignItems: "center",
             justifyContent: "start",
             gap: 1,
+            marginTop: "8px",
+            paddingLeft: "4px",
           }}
         >
           <Box
@@ -71,16 +89,24 @@ export default function GameCard({
               height: "6px",
               width: "6px",
               borderRadius: "50%",
-              background: "green",
+              background: "var(--green)",
             }}
           ></Box>
           <Typography
             sx={{
-              color: "#ffffff",
-              fontSize: "0.75rem",
+              color: "var(--white)",
+              fontSize: "12px",
             }}
           >
-            {`${players} playing`}
+            {`${players}`}
+          </Typography>
+          <Typography
+            sx={{
+              color: "var(--text-gray)",
+              fontSize: "12px",
+            }}
+          >
+            {`playing`}
           </Typography>
         </Box>
       </CardContent>

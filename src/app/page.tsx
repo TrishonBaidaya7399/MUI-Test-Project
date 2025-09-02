@@ -10,14 +10,14 @@ export default function Page() {
       {/* top section */}
       <Box
         sx={{
-          color: "#ffffff",
+          color: "var(--white)",
           display: "flex",
-          flexDirection: { lg: "row", xs: "column" },
+          flexDirection: { md: "row" , xs: 'column' },
           justifyContent: { lg: "space-between", xs: "start" },
           alignItems: { lg: "center", xs: "start" },
-          gap: { lg: "50px", xs: "16px" },
-          marginTop: { lg: "20px", xs: 0 },
-          marginBottom: { lg: "20px", xs: 0 },
+          gap: { xl: "60px", lg:'24px', xs: "16px" },
+          marginTop: { lg: "36px", xs: '36px' },
+          marginBottom: { lg: "36px", xs: '16px' },
         }}
         className="app-container"
       >

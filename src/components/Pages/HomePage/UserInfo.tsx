@@ -1,11 +1,12 @@
 import { Box, LinearProgress, Avatar, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
-
+import StarIcon from "@mui/icons-material/Star";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
 const userData = {
   username: "Test User",
   vipProgress: 50.0,
-  currentLevel: "Bronze",
-  nextLevel: "None",
+  currentLevel: "None",
+  nextLevel: "Bronze",
   progress: 70,
 };
 
@@ -81,10 +82,11 @@ export default function UserInfo() {
           marginBottom: "25px",
           borderRadius: 4,
           "& .MuiLinearProgress-bar": {
-            backgroundColor: "#FFC107",
+            background:
+              "linear-gradient(to right, var(--yellow-light), var(--yellow))",
           },
           "&.MuiLinearProgress-root": {
-            backgroundColor: "var(--background-gray)",
+            background: "var(--background-gray)",
           },
         }}
       />
@@ -105,7 +107,7 @@ export default function UserInfo() {
             gap: 1,
           }}
         >
-          <Icon icon="mdi:star" style={{ color: "#FFC107", fontSize: 16 }} />
+          <StarBorderIcon fontSize={"small"} />
           <Typography variant="body2">{userData.currentLevel}</Typography>
         </Box>
         <Box
@@ -119,9 +121,13 @@ export default function UserInfo() {
         <Box
           sx={{
             display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 1,
             justifyContent: "end",
           }}
         >
+          <StarIcon fontSize={"small"} />
           <Typography variant="body2">{userData.nextLevel}</Typography>
         </Box>
       </Box>

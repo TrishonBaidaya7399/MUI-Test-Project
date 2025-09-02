@@ -30,18 +30,22 @@ export default function TrendingContainer() {
   );
 
   return (
-    <Box className='app-container'>
+    <Box className="app-container">
       <TopBar onSearch={handleSearch} onCategoryChange={handleCategoryChange} />
-      <TrendingSection
-        title="Trending Games"
-        items={filteredGames}
-        searchTerm={searchTerm}
-      />
-      <TrendingSection
-        title="Trending Sports"
-        items={filteredSports}
-        searchTerm={searchTerm}
-      />
+      {filteredGames.length > 0 && (
+        <TrendingSection
+          title="Trending Games"
+          items={filteredGames}
+          searchTerm={searchTerm}
+        />
+      )}
+      {filteredSports.length > 0 && (
+        <TrendingSection
+          title="Trending Sports"
+          items={filteredSports}
+          searchTerm={searchTerm}
+        />
+      )}
     </Box>
   );
 }

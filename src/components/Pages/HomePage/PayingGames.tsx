@@ -21,7 +21,7 @@ export default function PayingGames() {
     <Box
       sx={{
         display: "flex",
-        gap: { xs: 2, lg: 3 },
+        gap: { xs: '16px', lg: '60px' },
         flexDirection: { xs: "column", lg: "row" },
         justifyContent: "space-between",
       }}
@@ -48,7 +48,7 @@ export default function PayingGames() {
           />
           <Box
             sx={{
-              color: "#ffffff",
+              color: "var(--white)",
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
@@ -79,7 +79,7 @@ export default function PayingGames() {
               ></Box>
               <Typography
                 sx={{
-                  color: "#ffffff",
+                  color: "var(--white)",
                   fontSize: "0.75rem",
                 }}
               >

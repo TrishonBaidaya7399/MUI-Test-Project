@@ -1,8 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
 import { Box } from "@mui/material";
 import { Icon } from "@iconify/react";
-
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 interface AnimatedHamburgerProps {
   isOpen: boolean;
   onClick: () => void;
@@ -13,47 +13,34 @@ interface AnimatedHamburgerProps {
 export default function AnimatedHamburger({
   isOpen,
   onClick,
-  color = "rgba(255, 255, 255, 0.55)",
+  color = "var(--primary)",
   size = 24,
 }: AnimatedHamburgerProps) {
   return (
     <Box
-      component={motion.button}
       onClick={onClick}
       sx={{
         background: "none",
         border: "none",
         cursor: "pointer",
-        padding: 0,
-        width: size,
-        height: size,
+        padding: "0px !important",
+        width: 'fit-content',
+        height: 'fit-content' ,
         display: "flex",
+        borderRadius: 1,
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 1,
         "&:hover": {
-          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          backgroundColor: "var(--primary)",
         },
       }}
-      whileTap={{ scale: 0.95 }}
+      // whileTap={{ scale: 0.95 }}
     >
       {isOpen ? (
-        <Icon
-          icon="ei:close"
-          style={{
-            fontSize: 50,
-            color: `${color}`,
-          }}
-        />
+       <CloseIcon fontSize="large"/>
       ) : (
-        <Icon
-          icon="ei:navicon"
-          style={{
-            fontSize: 50,
-            color: `${color}`,
-          }}
-        />
+       <MenuIcon fontSize='large'/>
       )}
     </Box>
   );

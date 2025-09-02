@@ -25,7 +25,7 @@ import TrophySVG from "../svg_icons/TroffeeSVG";
 import BlogSVG from "../svg_icons/BlogSVG";
 import ForumSVG from "../svg_icons/ForumSVG";
 
-const drawerWidth = 250;
+const drawerWidth = 240;
 const collapsedDrawerWidth = 64;
 
 interface MenuItem {
@@ -95,8 +95,8 @@ export default function AppSidebar() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "#2a2a2a",
-        color: "#ffffff",
+        backgroundColor: "var(--foreground)",
+        color: "var(--white)",
       }}
       onMouseEnter={() => {
         if (!isMobile && collapsed) {
@@ -109,20 +109,20 @@ export default function AppSidebar() {
         }
       }}
     >
-      <Box sx={{ p: 2, pt: 3 }}>
+      <Box sx={{ p: 2 }}>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            gap: 1,
+            gap: '12px',
             width: "100%",
           }}
         >
           <AnimatedHamburger
             isOpen={collapsed}
             onClick={toggleCollapsed}
-            color="#ffffff"
+            color="var(--white)"
             size={30}
           />
 
@@ -137,34 +137,38 @@ export default function AppSidebar() {
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: "#404040",
-                  color: "#ffffff",
+                  backgroundColor: "var(--primary)",
+                  color: "var(--white)",
                   textTransform: "none",
                   borderRadius: 1,
                   fontSize: "0.875rem",
                   fontWeight: 500,
                   minWidth: "auto",
+                  height: '44px',
                   px: 2,
                   "&:hover": {
-                    backgroundColor: "#505050",
+                    backgroundColor: "var(--secondary)",
+                    color: 'var(--text-black)'
                   },
                 }}
-              >
+                >
                 Casino
               </Button>
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: "#404040",
-                  color: "#ffffff",
+                  backgroundColor: "var(--primary)",
+                  color: "var(--white)",
                   textTransform: "none",
                   borderRadius: 1,
+                  height: '44px',
                   fontSize: "0.875rem",
                   fontWeight: 500,
                   minWidth: "auto",
                   px: 2,
                   "&:hover": {
-                    backgroundColor: "#505050",
+                    backgroundColor: "var(--secondary)",
+                    color: 'var(--text-black)'
                   },
                 }}
               >
@@ -179,13 +183,13 @@ export default function AppSidebar() {
           display: "flex",
           flexDirection: "column",
           gap: "8px",
-          paddingInline: "16px",
+          padding: "16px",
         }}
       >
         <List
           sx={{
             flexGrow: 1,
-            py: 0,
+            p: 0,
             backgroundColor: "var(--background-dark)",
             borderRadius: 1,
           }}
@@ -201,7 +205,7 @@ export default function AppSidebar() {
                     minHeight: 48,
                     justifyContent: isExpanded ? "initial" : "center",
                     "&:hover": {
-                      backgroundColor: "#404040",
+                      backgroundColor: "var(--primary)",
                     },
                   }}
                 >
@@ -217,7 +221,7 @@ export default function AppSidebar() {
                         icon={item.icon}
                         style={{
                           fontSize: 20,
-                          color: "#ffffff",
+                          color: "var(--text-white)",
                         }}
                       />
                     ) : (
@@ -230,7 +234,7 @@ export default function AppSidebar() {
                         primary={item.text}
                         primaryTypographyProps={{
                           fontSize: "0.875rem",
-                          color: "#ffffff",
+                          color: "var(--text-white)",
                           fontWeight: 400,
                         }}
                       />
@@ -241,7 +245,7 @@ export default function AppSidebar() {
                               ? "mdi:chevron-up"
                               : "mdi:chevron-down"
                           }
-                          style={{ color: "#888888", fontSize: 20 }}
+                          style={{ color: "var(--text-white)", fontSize: 20 }}
                         />
                       )}
                     </>
@@ -264,7 +268,7 @@ export default function AppSidebar() {
                             mx: 1,
                             borderRadius: 1,
                             "&:hover": {
-                              backgroundColor: "#404040",
+                              backgroundColor: "var(--primary)",
                             },
                           }}
                         >
@@ -274,7 +278,7 @@ export default function AppSidebar() {
                                 icon={child.icon}
                                 style={{
                                   fontSize: 20,
-                                  color: "#ffffff",
+                                  color: "var(--text-white)",
                                 }}
                               />
                             ) : (
@@ -285,7 +289,7 @@ export default function AppSidebar() {
                             primary={child.text}
                             primaryTypographyProps={{
                               fontSize: "0.8rem",
-                              color: "#cccccc",
+                              color: "var(--text-white)",
                             }}
                           />
                         </ListItemButton>
@@ -316,7 +320,7 @@ export default function AppSidebar() {
                     minHeight: 48,
                     justifyContent: isExpanded ? "initial" : "center",
                     "&:hover": {
-                      backgroundColor: "#404040",
+                      backgroundColor: "var(--primary)",
                     },
                   }}
                 >
@@ -332,7 +336,7 @@ export default function AppSidebar() {
                         icon={item.icon}
                         style={{
                           fontSize: 20,
-                          color: "#ffffff",
+                          color: "var(--text-white)",
                         }}
                       />
                     ) : (
@@ -345,7 +349,7 @@ export default function AppSidebar() {
                         primary={item.text}
                         primaryTypographyProps={{
                           fontSize: "0.875rem",
-                          color: "#ffffff",
+                          color: "var(--text-white)",
                           fontWeight: 400,
                         }}
                       />
@@ -356,7 +360,7 @@ export default function AppSidebar() {
                               ? "mdi:chevron-up"
                               : "mdi:chevron-down"
                           }
-                          style={{ color: "#888888", fontSize: 20 }}
+                          style={{ color: "var(--text-white)", fontSize: 20 }}
                         />
                       )}
                     </>
@@ -379,7 +383,7 @@ export default function AppSidebar() {
                             mx: 1,
                             borderRadius: 1,
                             "&:hover": {
-                              backgroundColor: "#404040",
+                              backgroundColor: "var(--primary)",
                             },
                           }}
                         >
@@ -389,7 +393,7 @@ export default function AppSidebar() {
                                 icon={child.icon}
                                 style={{
                                   fontSize: 20,
-                                  color: "#ffffff",
+                                  color: "var(--text-white)",
                                 }}
                               />
                             ) : (
@@ -400,7 +404,7 @@ export default function AppSidebar() {
                             primary={child.text}
                             primaryTypographyProps={{
                               fontSize: "0.8rem",
-                              color: "#cccccc",
+                              color: "var(--text-white)",
                             }}
                           />
                         </ListItemButton>
@@ -423,14 +427,14 @@ export default function AppSidebar() {
               <ListItemIcon sx={{ minWidth: 40 }}>
                 <Icon
                   icon="mdi:web"
-                  style={{ color: "#ffffff", fontSize: 20 }}
+                  style={{ color: "var(--text-white)", fontSize: 20 }}
                 />
               </ListItemIcon>
               <ListItemText
                 primary="Language English"
                 primaryTypographyProps={{
                   fontSize: "0.875rem",
-                  color: "#ffffff",
+                  color: "var(--text-white)",
                   fontWeight: 400,
                 }}
               />
@@ -463,7 +467,7 @@ export default function AppSidebar() {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            backgroundColor: "#2a2a2a",
+            backgroundColor: "var(--secondary)",
             borderRight: "none",
           },
         }}

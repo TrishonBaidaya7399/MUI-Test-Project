@@ -14,7 +14,7 @@ import { useSidebarStore } from "@/store/sidebarStore";
 import Image from "next/image";
 
 const drawerWidth = 240;
-const collapsedDrawerWidth = 64;
+const collapsedDrawerWidth = 76;
 
 export default function AppHeader() {
   const theme = useTheme();
@@ -31,9 +31,10 @@ export default function AppHeader() {
       position="fixed"
       sx={{
         width: { lg: `calc(100% - ${currentDrawerWidth}px)` },
+
         ml: { lg: `${currentDrawerWidth}px` },
         zIndex: theme.zIndex.drawer - 1,
-        backgroundColor: "#2a2a2a",
+        backgroundColor: "var(--background-gray)",
         borderBottom: "none",
         transition: theme.transitions.create(["width", "margin"], {
           easing: theme.transitions.easing.sharp,
@@ -42,26 +43,16 @@ export default function AppHeader() {
       }}
     >
       <Toolbar
-        sx={{ justifyContent: "space-between", minHeight: "64px" }}
+        sx={{ justifyContent: "space-between", py: "22px" }}
         className="app-container"
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          {isMobile && (
-            <Box sx={{ mr: 2 }}>
-              <AnimatedHamburger
-                isOpen={mobileOpen}
-                onClick={toggleMobileOpen}
-                color="#ffffff"
-                size={24}
-              />
-            </Box>
-          )}
           <Box
             sx={{
               height: "32px",
               width: "32px",
               borderRadius: "8px",
-              border: "2px solid #fff",
+              border: "2px solid var(--stroke)",
               mr: 2,
             }}
           >
@@ -69,7 +60,7 @@ export default function AppHeader() {
               width={32}
               height={32}
               alt="brand name"
-              style={{ objectFit: "cover", width: '100%', height: '100%' }}
+              style={{ objectFit: "cover", width: "100%", height: "100%" }}
               src="/default.avif"
               placeholder="blur"
               blurDataURL="/default.webp"
@@ -82,23 +73,24 @@ export default function AppHeader() {
             component="div"
             sx={{
               fontWeight: 600,
-              color: "#ffffff",
+              color: "var(--white)",
               fontSize: "1.1rem",
+              display: { lg: "block", xs: "none" },
             }}
           >
             BRAND NAME
           </Typography>
         </Box>
 
-        <Box sx={{ display: "flex", gap: 1 }}>
+        <Box sx={{ display: "flex", gap: "16px" }}>
           <Button
             variant="outlined"
             size="large"
             sx={{
-              color: "#ffffff",
+              color: "var(--white)",
               textTransform: "none",
               borderRadius: 1,
-              border: '2px solid var(--border)',
+              border: "2px solid var(--stroke)",
               px: 3,
               "&:hover": {
                 backgroundColor: "transparent",
@@ -111,18 +103,28 @@ export default function AppHeader() {
             variant="contained"
             size="large"
             sx={{
-              backgroundColor: "#ffffff", // White background
-              color: "#2a2a2a", // Dark text
+              backgroundColor: "var(--white)",
+              color: "var(--text-black)",
               textTransform: "none",
               borderRadius: 1,
               px: 3,
               "&:hover": {
-                backgroundColor: "#f5f5f5",
+                backgroundColor: "var(--tertiary)",
               },
             }}
           >
             Register
           </Button>
+          {isMobile && (
+            <Box sx={{ mr: 2 }}>
+              <AnimatedHamburger
+                isOpen={mobileOpen}
+                onClick={toggleMobileOpen}
+                color="var(--white)"
+                size={24}
+              />
+            </Box>
+          )}
         </Box>
       </Toolbar>
     </AppBar>

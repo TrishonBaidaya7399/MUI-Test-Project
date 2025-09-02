@@ -24,7 +24,7 @@ export default function ClientLayoutWrapper({
     !isMobile && collapsed && !hovered ? collapsedDrawerWidth : drawerWidth;
 
   return (
-    <Box sx={{ display: "flex", minHeight: "100vh" }}>
+    <Box sx={{ display: "flex", minHeight: "100vh"}}>
       <AppHeader />
       <AppSidebar />
 
@@ -33,7 +33,7 @@ export default function ClientLayoutWrapper({
         sx={{
           flexGrow: 1,
           width: { lg: `calc(100% - ${currentDrawerWidth}px)` },
-          backgroundColor: "#1a1a1a",
+          backgroundColor: "var(--background)",
           minHeight: "100vh",
           transition: theme.transitions.create("width", {
             easing: theme.transitions.easing.sharp,

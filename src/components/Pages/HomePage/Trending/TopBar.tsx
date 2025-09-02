@@ -1,4 +1,5 @@
 "use client";
+import SearchSVG from "@/components/svg_icons/SearchSVG";
 import {
   Box,
   Select,
@@ -42,35 +43,39 @@ export default function TopBar({ onSearch, onCategoryChange }: TopBarProps) {
       }}
     >
       <FormControl sx={{ minWidth: 120 }}>
-        {/* <InputLabel id="category-label" sx={{ color: "#ffffff" }}>
-          Category
-        </InputLabel> */}
         <Select
           labelId="category-label"
           value={category}
           onChange={handleCategoryChange}
           sx={{
-            color: "#ffffff",
-            bgcolor: "#404040",
+            border: 'none',
+            color: "var(--white)",
+            bgcolor: "var(--background-gray)",
             borderRadius: 1,
-            "& .MuiSelect-icon": { color: "#ffffff" },
+            height: '40px',
+            "& .MuiSelect-icon": { color: "var(--white)" },
           }}
-        >
+          >
           <MenuItem value="All">All</MenuItem>
           <MenuItem value="Casino">Casino</MenuItem>
           <MenuItem value="Sports">Sports</MenuItem>
         </Select>
       </FormControl>
       <TextField
+      size="small"
+      prefix={`${<SearchSVG/>}`}
         placeholder="Search your game"
         variant="outlined"
         value={searchTerm}
         onChange={handleSearchChange}
         sx={{
           flexGrow: 1,
-          bgcolor: "#404040",
+          // padding: '8px',
+          fontSize: '14px',
+          height: '40px',
+          bgcolor: "var(--background-gray)",
           borderRadius: 1,
-          "& .MuiInputBase-input": { color: "#ffffff" },
+          "& .MuiInputBase-input": { color: "var(--white)" },
           "& .MuiOutlinedInput-notchedOutline": { border: "none" },
         }}
       />
