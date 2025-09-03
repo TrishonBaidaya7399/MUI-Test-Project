@@ -23,7 +23,6 @@ export default function GameCard({
   players,
   category,
 }: GameCardProps) {
-  console.log({ category });
   return (
     <Card
       sx={{

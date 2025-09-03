@@ -43,7 +43,7 @@ export default function PayingGames() {
             placeholder="blur"
             blurDataURL={game?.blurUrl}
             height={250}
-            style={{ objectFit: "cover", borderRadius: "10px" }}
+            style={{ objectFit: "cover", borderRadius: "10px", width: '100%' }}
             priority={index === 0}
             sizes="(max-width: 600px) 100vw, 50vw"
           />

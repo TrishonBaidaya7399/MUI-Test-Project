@@ -153,23 +153,28 @@ body {
 .app-container {
   width: 100%;
   max-width: 1232px;
-  margin-inline: auto;
-  padding-inline: 16px;
-  @media screen and (max-width: 860px) {
-    width: 100%;
-    max-width: 768px;
-    margin-inline: auto;
-    padding-inline: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px; 
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .app-container {
+    padding: 0 16px !important;
   }
-  @media screen and (max-width: 680px) {
-    width: 100%;
-    max-width: 100%;
-    padding-inline: 16px;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    max-width: 786px;
+    padding: 0 16px;
   }
-  @media screen and (max-width: 500px) {
-    width: 100%;
-    max-width: 100%;
-    padding-inline: 10px;
+}
+@media (max-width: 512px) {
+  .app-container {
+    max-width: 402px;
+    padding: 0 16px;
   }
 }
 

@@ -1,9 +1,10 @@
 "use client";
+import dynamic from 'next/dynamic';
 import { Box, Typography, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useRef, useState, useEffect } from "react";
-import PromotionCard from "./PromotionCard";
 
+const PromotionCard = dynamic(() => import('./PromotionCard'));
 export interface PromotionItem {
   type: string;
   title: string;

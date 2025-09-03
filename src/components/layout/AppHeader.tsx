@@ -30,7 +30,7 @@ export default function AppHeader() {
     <AppBar
       position="fixed"
       sx={{
-        width: { lg: `calc(100% - ${currentDrawerWidth}px)` },
+        width: { lg: `calc(100% - ${currentDrawerWidth}px)`, xs: '100%' },
 
         ml: { lg: `${currentDrawerWidth}px` },
         zIndex: theme.zIndex.drawer - 1,

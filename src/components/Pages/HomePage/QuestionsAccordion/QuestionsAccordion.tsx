@@ -1,3 +1,5 @@
+"use client";
+import dynamic from 'next/dynamic';
 import React from "react";
 import questionsData from "@/lib/data/questions.json";
 import {
@@ -9,11 +11,23 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
+
 export const generateMetadata = async () => {
+  const questions = questionsData.questions;
+  const title = `FAQ - Brand Name | ${questions.length} Common Questions Answered`;
+  const maxQuestionsInDescription = 3;
+  const questionTitles = questions
+    .slice(0, maxQuestionsInDescription)
+    .map((q) => q.title)
+    .join(", ");
+  const description =
+    questions.length > 0
+      ? `Find answers to ${questions.length} frequently asked questions about Brand Name, including ${questionTitles}${questions.length > maxQuestionsInDescription ? ", and more." : "."}`
+      : "Explore frequently asked questions about Brand Name, including licensing, safety, betting options, and more.";
+
   return {
-    title: "FAQ - Brand Name",
-    description:
-      "Explore frequently asked questions about Brand Name, including licensing, safety, betting options, and more.",
+    title,
+    description,
   };
 };
 

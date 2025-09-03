@@ -1,9 +1,11 @@
 "use client";
+import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
 import { useState } from "react";
 import trendingData from "@/lib/data/trending.json";
-import TopBar from "./TopBar";
-import TrendingSection from "./TrendingSection";
+
+const TopBar = dynamic(() => import("./TopBar"));
+const TrendingSection = dynamic(() => import("./TrendingSection"));
 
 export default function TrendingContainer() {
   const [searchTerm, setSearchTerm] = useState("");
