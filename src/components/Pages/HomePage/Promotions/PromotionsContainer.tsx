@@ -83,7 +83,9 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
               color: canScrollLeft ? "var(--white)" : "var(--placeholder)",
               borderRadius: "4px",
               border: "1px solid var(--white-3)",
-              padding: "6px",
+              padding: "0px",
+              height: "20px",
+              width: "20px",
               marginRight: "8px",
               "&:disabled": {
                 borderColor: "var(--placeholder)",
@@ -91,7 +93,7 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
               },
             }}
           >
-            <Icon icon="mdi:chevron-left" width={24} height={24} />
+            <Icon icon="mdi:chevron-left" width={20} height={20} />
           </IconButton>
           <IconButton
             onClick={() => scroll("right")}
@@ -100,14 +102,16 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
               color: canScrollRight ? "var(--white)" : "var(--placeholder)",
               borderRadius: "4px",
               border: "1px solid var(--white-3)",
-              padding: "6px",
+              padding: "0px",
+              height: "20px",
+              width: "20px",
               "&:disabled": {
                 borderColor: "var(--placeholder)",
-                "& svg": { color: "var(--placeholder)" },
+                "& svg": { color: "var(placeholder)" },
               },
             }}
           >
-            <Icon icon="mdi:chevron-right" width={24} height={24} />
+            <Icon icon="mdi:chevron-right" width={20} height={20} />
           </IconButton>
         </Box>
       </Box>

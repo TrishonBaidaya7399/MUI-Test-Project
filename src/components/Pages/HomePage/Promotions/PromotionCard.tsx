@@ -71,7 +71,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
             {item?.subTitle}
           </Typography>
         </Box>
-        <Link href={`${item?.href}`}>
+        <Link href={`${item?.href}`} className="border-none">
           <Typography
             sx={{
               fontSize: "14px",
@@ -86,7 +86,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
       <Box
         sx={{
           borderRadius: 2,
-          border: "2px solid var(--white-3)",
+          // border: "2px solid var(--white-3)",
           height: { xs: "120px", sm: "140px" },
           width: { xs: "120px", sm: "140px" },
         }}

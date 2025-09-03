@@ -182,3 +182,17 @@ body {
 .mui-14vsv3w {
   padding: 0 !important;
 }
+.Mui-expanded {
+  .MuiSvgIcon-root {
+    color: var(--white);
+  }
+}
+a {
+  list-style: none;
+  color: currentColor;
+  text-decoration: none;
+}
+.footer-items {
+  padding: 0 !important;
+  
+}

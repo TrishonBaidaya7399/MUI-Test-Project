@@ -19,8 +19,15 @@ export const generateMetadata = async () => {
 
 const QuestionsAccordion = ({ questions = questionsData.questions }) => {
   return (
-    <Box sx={{marginTop: '36px'}} className="app-container">
-      <Typography variant="h6" sx={{ color: "var(--text-gray)", fontSize: "18px", marginBottom: '10px' }}>
+    <Box sx={{ marginTop: "36px" }} className="app-container">
+      <Typography
+        variant="h6"
+        sx={{
+          color: "var(--text-gray)",
+          fontSize: "18px",
+          marginBottom: "10px",
+        }}
+      >
         Still Have Questions?
       </Typography>
       {questions.map((question, index) => (
@@ -62,6 +69,7 @@ const QuestionsAccordion = ({ questions = questionsData.questions }) => {
                 color: "var(--white)",
                 fontWeight: 500,
                 fontSize: "16px",
+               
               }}
             >
               {question.title}
