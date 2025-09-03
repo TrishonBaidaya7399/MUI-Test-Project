@@ -87,8 +87,9 @@ function PromotionCard({ item }: { item: PromotionItem }) {
         sx={{
           borderRadius: 2,
           // border: "2px solid var(--white-3)",
-          height: { xs: "120px", sm: "140px" },
-          width: { xs: "120px", sm: "140px" },
+          height:'140px',
+          width: '140px',
+          minWidth: '140px',
         }}
       >
         <Image
