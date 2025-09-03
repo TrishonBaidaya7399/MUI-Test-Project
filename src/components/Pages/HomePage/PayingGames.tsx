@@ -38,17 +38,18 @@ export default function PayingGames() {
         >
           <Box
             sx={{
-              width: { lg: "400px", xs: "100%" },
-              maxWidth: { lg: "400px", xs: "100%" },
+              position: "relative",
+              width: { xl: "400px", lg: "300px", xs: "100%" },
+              maxWidth: { xl: "400px", lg: "300px", xs: "100%" },
             }}
           >
             <Image
               src={game.imageUrl}
               alt={`${game.title} card`}
               width={400}
+              height={250}
               placeholder="blur"
               blurDataURL={game?.blurUrl}
-              height={250}
               style={{
                 objectFit: "cover",
                 borderRadius: "10px",
