@@ -13,7 +13,7 @@ interface GameCardProps {
   title: string;
   image: string;
   players: number;
-  category: string; // Added category prop to match the design
+  category: string;
 }
 
 export default function GameCard({
@@ -23,16 +23,17 @@ export default function GameCard({
   players,
   category,
 }: GameCardProps) {
+  console.log({ category });
   return (
     <Card
       sx={{
-        minWidth: "144px", 
+        minWidth: "144px",
         height: "212px",
         background: "transparent",
         boxShadow: "none",
         position: "relative",
         border: "none",
-        overflow: "hidden", 
+        overflow: "hidden",
       }}
     >
       <Box sx={{ position: "relative", width: "100%", height: "188px" }}>
@@ -58,58 +59,61 @@ export default function GameCard({
             position: "absolute",
             top: 8,
             left: 8,
-            bgcolor: "var(--background-3)", // Dark background to match design
+            bgcolor: "var(--background-3)", 
             color: "var(--white)",
             fontWeight: "bold",
             borderRadius: "50%",
             width: "24px",
             height: "24px",
             fontSize: "12px",
-            display: 'flex', 
-            alignItems: 'center',
-            justifyContent: 'center',
-            p: 0
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingLeft: 0,
+            paddingRight: 0,
           }}
         />
       </Box>
-      <CardContent sx={{ p: 1, pl: 0, textAlign: "center", pt: 0 }}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "start",
-            gap: 1,
-            marginTop: "8px",
-            paddingLeft: "4px",
-          }}
-        >
+      {category === "casino" && (
+        <CardContent sx={{ p: 1, pl: 0, textAlign: "center", pt: 0 }}>
           <Box
             sx={{
-              height: "6px",
-              width: "6px",
-              borderRadius: "50%",
-              background: "var(--green)",
-            }}
-          ></Box>
-          <Typography
-            sx={{
-              color: "var(--white)",
-              fontSize: "12px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "start",
+              gap: 1,
+              marginTop: "8px",
+              paddingLeft: "4px",
             }}
           >
-            {`${players}`}
-          </Typography>
-          <Typography
-            sx={{
-              color: "var(--text-gray)",
-              fontSize: "12px",
-            }}
-          >
-            {`playing`}
-          </Typography>
-        </Box>
-      </CardContent>
+            <Box
+              sx={{
+                height: "6px",
+                width: "6px",
+                borderRadius: "50%",
+                background: "var(--green)",
+              }}
+            ></Box>
+            <Typography
+              sx={{
+                color: "var(--white)",
+                fontSize: "12px",
+              }}
+            >
+              {`${players}`}
+            </Typography>
+            <Typography
+              sx={{
+                color: "var(--text-gray)",
+                fontSize: "12px",
+              }}
+            >
+              {`playing`}
+            </Typography>
+          </Box>
+        </CardContent>
+      )}
     </Card>
   );
 }

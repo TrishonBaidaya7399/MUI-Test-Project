@@ -29,6 +29,7 @@ body {
   --text-gray: oklch(100% 0.00011 271.152 / 0.55);
   --white-3: oklch(100% 0.00011 271.152 / 0.55);
   --yellow: oklch(96.912% 0.17341 109.258);
+  --yellow-light: oklch(93.057% 0.11293 95.489);
   --green: oklch(65.997% 0.15604 154.512);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);

@@ -66,7 +66,10 @@ export default function TrendingSection({
           // px: 2,
         }}
       >
-        <Typography variant="h6" sx={{ color: "var(--white)", fontSize: "18px" }}>
+        <Typography
+          variant="h6"
+          sx={{ color: "var(--white)", fontSize: "18px" }}
+        >
           {title}
         </Typography>
         <Box>
@@ -74,12 +77,12 @@ export default function TrendingSection({
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
             sx={{
-              color: canScrollLeft ? "var(--white)" : "var(--placeholder)", 
+              color: canScrollLeft ? "var(--white)" : "var(--placeholder)",
               borderRadius: "4px",
               border: "1px solid var(--white-3)",
               padding: "0px",
-              height: '20px',
-              width: '20px',
+              height: "20px",
+              width: "20px",
               marginRight: "8px",
               "&:disabled": {
                 borderColor: "var(--placeholder)",
@@ -93,12 +96,12 @@ export default function TrendingSection({
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
             sx={{
-              color: canScrollRight ?  "var(--white)" : "var(--placeholder)",
+              color: canScrollRight ? "var(--white)" : "var(--placeholder)",
               borderRadius: "4px",
               border: "1px solid var(--white-3)",
               padding: "0px",
-              height: '20px',
-              width: '20px',
+              height: "20px",
+              width: "20px",
               "&:disabled": {
                 borderColor: "var(--placeholder)",
                 "& svg": { color: "var(placeholder)" },
