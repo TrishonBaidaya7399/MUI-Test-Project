@@ -50,7 +50,7 @@ export default function TopBar({ onSearch, onCategoryChange }: TopBarProps) {
           sx={{
             border: 'none',
             color: "var(--white)",
-            bgcolor: "var(--background-gray)",
+            bgcolor: "var(--background-2)",
             borderRadius: 1,
             height: '40px',
             "& .MuiSelect-icon": { color: "var(--white)" },
@@ -73,7 +73,7 @@ export default function TopBar({ onSearch, onCategoryChange }: TopBarProps) {
           // padding: '8px',
           fontSize: '14px',
           height: '40px',
-          bgcolor: "var(--background-gray)",
+          bgcolor: "var(--background-2)",
           borderRadius: 1,
           "& .MuiInputBase-input": { color: "var(--white)" },
           "& .MuiOutlinedInput-notchedOutline": { border: "none" },

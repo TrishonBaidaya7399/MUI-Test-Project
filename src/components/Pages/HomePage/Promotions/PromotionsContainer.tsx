@@ -82,7 +82,7 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
             sx={{
               color: canScrollLeft ? "var(--white)" : "var(--placeholder)",
               borderRadius: "4px",
-              border: "1px solid var(--stroke)",
+              border: "1px solid var(--white-3)",
               padding: "6px",
               marginRight: "8px",
               "&:disabled": {
@@ -99,7 +99,7 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
             sx={{
               color: canScrollRight ? "var(--white)" : "var(--placeholder)",
               borderRadius: "4px",
-              border: "1px solid var(--stroke)",
+              border: "1px solid var(--white-3)",
               padding: "6px",
               "&:disabled": {
                 borderColor: "var(--placeholder)",

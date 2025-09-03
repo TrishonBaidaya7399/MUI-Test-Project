@@ -1,8 +1,10 @@
 import MainLayout from "@/components/layout/MainLayout";
 import BetsTable from "@/components/Pages/HomePage/BetsComponents/BetsTable";
+import Footer from "@/components/Pages/HomePage/Footer/Footer";
 import PayingGames from "@/components/Pages/HomePage/PayingGames";
 import { mockPromotions } from "@/components/Pages/HomePage/Promotions/mockPromotions";
 import PromotionsContainer from "@/components/Pages/HomePage/Promotions/PromotionsContainer";
+import QuestionsAccordion from "@/components/Pages/HomePage/QuestionsAccordion/QuestionsAccordion";
 import TrendingContainer from "@/components/Pages/HomePage/Trending/TrendingContainer";
 import UserInfo from "@/components/Pages/HomePage/UserInfo";
 import { Box } from "@mui/material";
@@ -34,6 +36,8 @@ export default function Page() {
       <div className="app-container">
         <BetsTable />
       </div>
+      <QuestionsAccordion/>
+      <Footer/>
     </MainLayout>
   );
 }

@@ -13,7 +13,7 @@ interface AnimatedHamburgerProps {
 export default function AnimatedHamburger({
   isOpen,
   onClick,
-  color = "var(--primary)",
+  color = "var(--white-2)",
   size = 24,
 }: AnimatedHamburgerProps) {
   return (
@@ -32,7 +32,7 @@ export default function AnimatedHamburger({
         justifyContent: "center",
         alignItems: "center",
         "&:hover": {
-          backgroundColor: "var(--primary)",
+          backgroundColor: color,
         },
       }}
       // whileTap={{ scale: 0.95 }}

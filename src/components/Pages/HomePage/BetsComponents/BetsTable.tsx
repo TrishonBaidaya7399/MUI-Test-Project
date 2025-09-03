@@ -43,7 +43,7 @@ const BetsTable = () => {
         key={row._id}
         sx={{
           "&:nth-of-type(odd)": { backgroundColor: "var(--background-card)" },
-          "&:nth-of-type(even)": { backgroundColor: "var(--background-dark)" },
+          "&:nth-of-type(even)": { backgroundColor: "var(--background-3)" },
           height: "48px",
           marginTop: { lg: "36px", xs: "16px" },
         }}
@@ -121,7 +121,7 @@ const BetsTable = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "var(--background-dark)",
+        backgroundColor: "var(--background-3)",
         width: "100%",
         overflowX: "hidden",
       }}
@@ -132,7 +132,7 @@ const BetsTable = () => {
           gap: "16px",
           mb: "10px",
           padding: "8px",
-          backgroundColor: "var(--foreground)",
+          backgroundColor: "var(--background-1)",
           borderRadius: 1,
           overflowX: "auto",
           whiteSpace: "nowrap",
@@ -150,7 +150,7 @@ const BetsTable = () => {
             fontWeight: 500,
             padding: "10px 14px",
             backgroundColor:
-              selectedTab === 0 ? "var(--primary)" : "transparent",
+              selectedTab === 0 ? "var(--white-2)" : "transparent",
             borderRadius: 1,
             cursor: "pointer",
             display: "inline-block",
@@ -166,7 +166,7 @@ const BetsTable = () => {
             fontWeight: 500,
             padding: "10px 14px",
             backgroundColor:
-              selectedTab === 1 ? "var(--primary)" : "transparent",
+              selectedTab === 1 ? "var(--white-2)" : "transparent",
             borderRadius: 1,
             cursor: "pointer",
             display: "inline-block",
@@ -182,7 +182,7 @@ const BetsTable = () => {
             fontWeight: 500,
             padding: "10px 14px",
             backgroundColor:
-              selectedTab === 2 ? "var(--primary)" : "transparent",
+              selectedTab === 2 ? "var(--white-2)" : "transparent",
             borderRadius: 1,
             cursor: "pointer",
             display: "inline-block",
@@ -206,7 +206,7 @@ const BetsTable = () => {
         >
           <TableHead>
             <TableRow
-              sx={{ backgroundColor: "var(--background-dark)", height: "48px" }}
+              sx={{ backgroundColor: "var(--background-3)", height: "48px" }}
             >
               <TableCell
                 sx={{

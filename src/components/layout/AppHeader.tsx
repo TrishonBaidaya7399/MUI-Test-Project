@@ -34,7 +34,7 @@ export default function AppHeader() {
 
         ml: { lg: `${currentDrawerWidth}px` },
         zIndex: theme.zIndex.drawer - 1,
-        backgroundColor: "var(--background-gray)",
+        backgroundColor: "var(--background-2)",
         borderBottom: "none",
         transition: theme.transitions.create(["width", "margin"], {
           easing: theme.transitions.easing.sharp,
@@ -52,7 +52,7 @@ export default function AppHeader() {
               height: "32px",
               width: "32px",
               borderRadius: "8px",
-              border: "2px solid var(--stroke)",
+              border: "2px solid var(--white-3)",
               mr: 2,
             }}
           >
@@ -90,8 +90,9 @@ export default function AppHeader() {
               color: "var(--white)",
               textTransform: "none",
               borderRadius: 1,
-              border: "2px solid var(--stroke)",
+              border: "2px solid var(--white-3)",
               px: 3,
+              backgroundColor: "var(--background-3)",
               "&:hover": {
                 backgroundColor: "transparent",
               },

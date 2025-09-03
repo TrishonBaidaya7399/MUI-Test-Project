@@ -58,7 +58,7 @@ export default function GameCard({
             position: "absolute",
             top: 8,
             left: 8,
-            bgcolor: "var(--background-dark)", // Dark background to match design
+            bgcolor: "var(--background-3)", // Dark background to match design
             color: "var(--white)",
             fontWeight: "bold",
             borderRadius: "50%",

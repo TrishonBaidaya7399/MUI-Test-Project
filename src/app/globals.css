@@ -14,20 +14,20 @@ body {
 }
 
 :root {
-  --primary: oklch(37.15% 0.00004 271.152);
+  --white-2: oklch(100% 0.00011 271.152 / 0.15);
   --secondary: oklch(64.009% 0.00007 271.152);
   --tertiary: oklch(88.531% 0.0001 271.152);
   --background: oklch(18.425% 0.00433 308.037);
-  --background-dark: oklch(16.886% 0.00208 286.046);
-  --background-gray: oklch(27.129% 0.00747 297.237);
+  --background-1: oklch(20.264% 0.0061 300.906);
+  --card-background1: oklch(22.925% 0.00779 297.142);
+  --background-2: oklch(27.129% 0.00747 297.237);
+  --background-3: oklch(16.886% 0.00208 286.046);
   --background-card: oklch(22.925% 0.00779 297.142);
-  --foreground: oklch(20.264% 0.0061 300.906);
   --white: oklch(100% 0.00011 271.152);
   --placeholder: oklch(100% 0.00011 271.152 / 0.15);
-  --text-black: oklab(20.264% 0.00313 -0.00524);
+  --text-black: oklch(20.264% 0.0061 300.906);
   --text-gray: oklch(100% 0.00011 271.152 / 0.55);
-  --stroke: oklch(100% 0.00011 271.152 / 0.55);
-  --yellow-light: oklch(93.057% 0.11293 95.489);
+  --white-3: oklch(100% 0.00011 271.152 / 0.55);
   --yellow: oklch(96.912% 0.17341 109.258);
   --green: oklch(65.997% 0.15604 154.512);
   --card: oklch(1 0 0);
@@ -64,9 +64,9 @@ body {
 
 .dark {
   --background: oklch(18.425% 0.00433 308.037);
-  --background-dark: oklch(16.886% 0.00208 286.046);
-  --background-gray: oklch(27.129% 0.00747 297.237);
-  --foreground: oklch(20.264% 0.0061 300.906);
+  --background-3: oklch(16.886% 0.00208 286.046);
+  --background-2: oklch(27.129% 0.00747 297.237);
+  --background-1: oklch(20.264% 0.0061 300.906);
   --card: oklch(0.145 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
@@ -102,9 +102,9 @@ body {
 
 @theme inline {
   --color-background: var(--background);
-  --color-background-dark: var(--background-dark);
-  --color-background-gray: var(--background-gray);
-  --color-foreground: var(--foreground);
+  --color-background-dark: var(--background-3);
+  --color-background-gray: var(--background-2);
+  --color-foreground: var(--background-1);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -149,7 +149,7 @@ body {
     @apply bg-background text-foreground;
   }
 }
-.app-container{
+.app-container {
   width: 100%;
   max-width: 1232px;
   margin-inline: auto;
@@ -172,9 +172,9 @@ body {
   }
 }
 
-.bg-yellow-gradient{
+.bg-yellow-gradient {
   background: linear-gradient(var(--yellow), var(--yellow-light));
 }
-.mui-1dybbl5-MuiChip-label{
+.mui-1dybbl5-MuiChip-label {
   padding: 0 !important;
 }

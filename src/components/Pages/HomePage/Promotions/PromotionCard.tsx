@@ -38,7 +38,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
         >
           <Typography
             sx={{
-              background: "var(--primary)",
+              background: "var(--white-2)",
               borderRadius: 2,
               height: '24px',
               textAlign: "center",
@@ -86,7 +86,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
       <Box
         sx={{
           borderRadius: 2,
-          border: "2px solid var(--stroke)",
+          border: "2px solid var(--white-3)",
           height: { xs: "120px", sm: "140px" },
           width: { xs: "120px", sm: "140px" },
         }}

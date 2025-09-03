@@ -1,0 +1,39 @@
+{
+  "questions": [
+    {
+      "_id": "1",
+        "title": "Who is Brand Name",
+      "content": "Leading the online gambling industry since 2017, Stake.com offers a wide variety of online casino and sports betting options, operating globally in 15 different languages. With a reputable and secure platform, Stake Casino is home to worldwide local currencies and crypto betting options for online slot games, Stake Originals, and live casino games. Stake Sportsbook provides unbeatable odds on all major sporting events, including a range of eSport leagues. We host regular bet bonuses and promotions and offer an exclusive VIP Club experience - all with a simple-to-use deposit process on our licensed platform."
+    },
+    {
+      "_id": "2",
+        "title": "Is Brand Name Licensed?",
+      "content": "Yes, Stake.com is licensed and regulated by the Curaçao Gaming Authority under license number OGL/2024/1451/0918. This ensures that the platform operates in compliance with strict gaming standards, providing a safe and fair environment for users."
+    },
+    {
+      "_id": "3",
+        "title": "Is Betting on Brand Name Safe?",
+      "content": "Yes, betting on Stake.com is safe. The platform uses advanced security measures such as 128-bit SSL encryption, two-factor authentication (2FA), and the Stake Vault feature to protect user funds. Additionally, it is a Crypto Gambling Foundation verified operator with robust policies against money laundering and a strong commitment to responsible gambling."
+    },
+    {
+      "_id": "4",
+        "title": "What Currencies Can I Bet With?",
+      "content": "Stake.com supports over 20 cryptocurrencies for betting, including Bitcoin (BTC), Ethereum (ETH), and Polygon (MATIC), among others. It also accepts local fiat currencies in certain regions, such as INR via UPI in India, and CAD via Interac in Canada, depending on your location."
+    },
+    {
+      "_id": "5",
+        "title": "What Types of Casino Games Can I Play?",
+      "content": "Stake.com offers a wide variety of casino games, including thousands of slot games, classic table games like Blackjack, Roulette, Poker, and Baccarat, live casino games from providers like Evolution Gaming, and exclusive Stake Originals such as Plinko, Mines, and Crash. The platform also features game shows and scratchcards for diverse gaming options."
+    },
+    {
+      "_id": "6",
+        "title": "What Sports Can I Bet On?",
+      "content": "Stake Sportsbook covers over 50 sports, including popular options like Football, Basketball, Tennis, and Cricket, as well as niche markets like Darts and Water Polo. It also offers extensive eSports betting on titles such as Dota 2, CS:GO, and League of Legends, with live betting and streaming available for major events."
+    },
+    {
+      "_id": "7",
+        "title": "How Do I Watch Live Streams?",
+      "content": "To watch live streams on Stake.com, navigate to the Stake Sportsbook section, select an ongoing event with a live stream icon, and click it to view. You need to be logged in with a funded account or an active bet on the event. Streams are available for major sports and eSports in HD, directly from your browser or mobile device."
+    }
+  ]
+}

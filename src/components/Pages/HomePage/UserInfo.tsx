@@ -86,7 +86,7 @@ export default function UserInfo() {
               "linear-gradient(to right, var(--yellow-light), var(--yellow))",
           },
           "&.MuiLinearProgress-root": {
-            background: "var(--background-gray)",
+            background: "var(--background-2)",
           },
         }}
       />
@@ -127,7 +127,7 @@ export default function UserInfo() {
             justifyContent: "end",
           }}
         >
-          <StarIcon fontSize={"small"} />
+          <StarIcon sx={{ color: "var(--yellow)" }} fontSize={"small"} />
           <Typography variant="body2">{userData.nextLevel}</Typography>
         </Box>
       </Box>

@@ -95,7 +95,7 @@ export default function AppSidebar() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "var(--foreground)",
+        backgroundColor: "var(--background-1)",
         color: "var(--white)",
       }}
       onMouseEnter={() => {
@@ -137,7 +137,7 @@ export default function AppSidebar() {
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: "var(--primary)",
+                  backgroundColor: "var(--white-2)",
                   color: "var(--white)",
                   textTransform: "none",
                   borderRadius: 1,
@@ -157,7 +157,7 @@ export default function AppSidebar() {
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: "var(--primary)",
+                  backgroundColor: "var(--white-2)",
                   color: "var(--white)",
                   textTransform: "none",
                   borderRadius: 1,
@@ -190,7 +190,7 @@ export default function AppSidebar() {
           sx={{
             flexGrow: 1,
             p: 0,
-            backgroundColor: "var(--background-dark)",
+            backgroundColor: "var(--background-3)",
             borderRadius: 1,
           }}
         >
@@ -205,7 +205,7 @@ export default function AppSidebar() {
                     minHeight: 48,
                     justifyContent: isExpanded ? "initial" : "center",
                     "&:hover": {
-                      backgroundColor: "var(--primary)",
+                      backgroundColor: "var(--white-2)",
                     },
                   }}
                 >
@@ -268,7 +268,7 @@ export default function AppSidebar() {
                             mx: 1,
                             borderRadius: 1,
                             "&:hover": {
-                              backgroundColor: "var(--primary)",
+                              backgroundColor: "var(--white-2)",
                             },
                           }}
                         >
@@ -305,7 +305,7 @@ export default function AppSidebar() {
           sx={{
             flexGrow: 1,
             py: 0,
-            backgroundColor: "var(--background-dark)",
+            backgroundColor: "var(--background-3)",
             borderRadius: 1,
           }}
         >
@@ -320,7 +320,7 @@ export default function AppSidebar() {
                     minHeight: 48,
                     justifyContent: isExpanded ? "initial" : "center",
                     "&:hover": {
-                      backgroundColor: "var(--primary)",
+                      backgroundColor: "var(--white-2)",
                     },
                   }}
                 >
@@ -383,7 +383,7 @@ export default function AppSidebar() {
                             mx: 1,
                             borderRadius: 1,
                             "&:hover": {
-                              backgroundColor: "var(--primary)",
+                              backgroundColor: "var(--white-2)",
                             },
                           }}
                         >
