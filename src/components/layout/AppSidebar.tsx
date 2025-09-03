@@ -24,9 +24,9 @@ import LiveSupportSVG from "../svg_icons/LiveSupportSVG";
 import TrophySVG from "../svg_icons/TroffeeSVG";
 import BlogSVG from "../svg_icons/BlogSVG";
 import ForumSVG from "../svg_icons/ForumSVG";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const drawerWidth = 240;
-const collapsedDrawerWidth = 64;
 
 interface MenuItem {
   text: string;
@@ -68,14 +68,7 @@ export default function AppSidebar() {
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
-  const {
-    mobileOpen,
-    collapsed,
-    hovered,
-    setMobileOpen,
-    toggleCollapsed,
-    setHovered,
-  } = useSidebarStore();
+  const { mobileOpen, setMobileOpen } = useSidebarStore();
 
   const handleItemClick = (itemText: string) => {
     if (expandedItems.includes(itemText)) {
@@ -85,9 +78,8 @@ export default function AppSidebar() {
     }
   };
 
-  const isExpanded = !isMobile && (collapsed ? hovered : true);
-  const currentWidth =
-    !isMobile && collapsed && !hovered ? collapsedDrawerWidth : drawerWidth;
+  const isExpanded = true; // Always expanded on desktop, mobile only when open
+  const currentWidth = drawerWidth; // Fixed width, no collapse on desktop
 
   const drawer = (
     <Box
@@ -98,16 +90,6 @@ export default function AppSidebar() {
         backgroundColor: "var(--background-1)",
         color: "var(--white)",
       }}
-      onMouseEnter={() => {
-        if (!isMobile && collapsed) {
-          setHovered(true);
-        }
-      }}
-      onMouseLeave={() => {
-        if (!isMobile && collapsed) {
-          setHovered(false);
-        }
-      }}
     >
       <Box sx={{ p: 2 }}>
         <Box
@@ -115,16 +97,20 @@ export default function AppSidebar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            gap: '12px',
+            gap: "12px",
             width: "100%",
           }}
         >
-          <AnimatedHamburger
-            isOpen={collapsed}
-            onClick={toggleCollapsed}
-            color="var(--white)"
-            size={30}
-          />
+          {isMobile ? (
+            <AnimatedHamburger
+              isOpen={mobileOpen}
+              onClick={() => setMobileOpen(!mobileOpen)}
+              color="var(--white)"
+              size={30}
+            />
+          ) : (
+            <MenuIcon fontSize="large" />
+          )}
 
           {isExpanded && (
             <Box
@@ -144,14 +130,14 @@ export default function AppSidebar() {
                   fontSize: "0.875rem",
                   fontWeight: 500,
                   minWidth: "auto",
-                  height: '44px',
+                  height: "44px",
                   px: 2,
                   "&:hover": {
                     backgroundColor: "var(--secondary)",
-                    color: 'var(--text-black)'
+                    color: "var(--text-black)",
                   },
                 }}
-                >
+              >
                 Casino
               </Button>
               <Button
@@ -161,14 +147,14 @@ export default function AppSidebar() {
                   color: "var(--white)",
                   textTransform: "none",
                   borderRadius: 1,
-                  height: '44px',
+                  height: "44px",
                   fontSize: "0.875rem",
                   fontWeight: 500,
                   minWidth: "auto",
                   px: 2,
                   "&:hover": {
                     backgroundColor: "var(--secondary)",
-                    color: 'var(--text-black)'
+                    color: "var(--text-black)",
                   },
                 }}
               >
@@ -415,35 +401,6 @@ export default function AppSidebar() {
               )}
             </Box>
           ))}
-          {/* <ListItem disablePadding>
-            <ListItemButton
-              sx={{
-                borderRadius: 1,
-                "&:hover": {
-                  backgroundColor: "#404040",
-                },
-              }}
-            >
-              <ListItemIcon sx={{ minWidth: 40 }}>
-                <Icon
-                  icon="mdi:web"
-                  style={{ color: "var(--text-white)", fontSize: 20 }}
-                />
-              </ListItemIcon>
-              <ListItemText
-                primary="Language English"
-                primaryTypographyProps={{
-                  fontSize: "0.875rem",
-                  color: "var(--text-white)",
-                  fontWeight: 400,
-                }}
-              />
-              <Icon
-                icon="mdi:chevron-down"
-                style={{ color: "#888888", fontSize: 20 }}
-              />
-            </ListItemButton>
-          </ListItem> */}
         </List>
       </Box>
     </Box>
@@ -482,13 +439,9 @@ export default function AppSidebar() {
           display: { xs: "none", lg: "block" },
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
-            width: currentWidth,
+            width: drawerWidth,
             backgroundColor: "#2a2a2a",
             borderRight: "none",
-            transition: theme.transitions.create("width", {
-              easing: theme.transitions.easing.sharp,
-              duration: theme.transitions.duration.enteringScreen,
-            }),
             zIndex: theme.zIndex.drawer,
           },
         }}

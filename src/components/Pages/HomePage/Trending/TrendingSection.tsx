@@ -33,8 +33,8 @@ export default function TrendingSection({
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const cardWidth = 200; // Pixel width of each card
-      const gap = 16; // Gap between cards
+      const cardWidth = 200; 
+      const gap = 16; 
       const scrollAmount = cardWidth + gap;
       const newScroll =
         scrollRef.current.scrollLeft +
@@ -47,7 +47,7 @@ export default function TrendingSection({
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1); // Small threshold to avoid edge case
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1); 
     }
   };
 
@@ -63,7 +63,6 @@ export default function TrendingSection({
           justifyContent: "space-between",
           alignItems: "center",
           mb: 2,
-          // px: 2,
         }}
       >
         <Typography
@@ -104,7 +103,7 @@ export default function TrendingSection({
               width: "20px",
               "&:disabled": {
                 borderColor: "var(--placeholder)",
-                "& svg": { color: "var(placeholder)" },
+                "& svg": { color: "var(--placeholder)" },
               },
             }}
           >
@@ -118,11 +117,11 @@ export default function TrendingSection({
           display: "flex",
           overflowX: "auto",
           gap: "16px",
-          // padding: "0 16px ",
           "&::-webkit-scrollbar": { display: "none" },
           scrollbarWidth: "none",
           width: "100%",
           boxSizing: "border-box",
+          maxWidth: "100vw", 
         }}
         onScroll={checkScroll}
       >

@@ -43,7 +43,7 @@ export default function AppHeader() {
       }}
     >
       <Toolbar
-        sx={{ justifyContent: "space-between", py: "22px" }}
+        sx={{ justifyContent: "space-between", py: "16px" }}
         className="app-container"
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>

@@ -3,15 +3,15 @@ import Image from "next/image";
 
 const payingGames = [
   {
-    title: "Casino",
-    imageUrl: "/currentGameImages/image 60.avif",
-    blurUrl: "/currentGameImages/image 60.webp",
-    players: 348,
-  },
-  {
     title: "Sports",
     imageUrl: "/currentGameImages/image 61.avif",
     blurUrl: "/currentGameImages/image 61.webp",
+    players: 348,
+  },
+  {
+    title: "Casino",
+    imageUrl: "/currentGameImages/image 60.avif",
+    blurUrl: "/currentGameImages/image 60.webp",
     players: 348,
   },
 ];
@@ -21,7 +21,8 @@ export default function PayingGames() {
     <Box
       sx={{
         display: "flex",
-        gap: { xs: '16px', lg: '60px' },
+        gap: { xs: "16px", lg: "60px" },
+        marginInline: 'auto',
         flexDirection: { xs: "column", lg: "row" },
         justifyContent: "space-between",
       }}

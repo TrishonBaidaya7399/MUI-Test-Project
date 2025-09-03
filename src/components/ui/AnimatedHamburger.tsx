@@ -32,7 +32,7 @@ export default function AnimatedHamburger({
         justifyContent: "center",
         alignItems: "center",
         "&:hover": {
-          backgroundColor: color,
+          backgroundColor: 'var(--background1)',
         },
       }}
       // whileTap={{ scale: 0.95 }}

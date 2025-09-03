@@ -123,7 +123,7 @@ const BetsTable = () => {
       sx={{
         backgroundColor: "var(--background-3)",
         width: "100%",
-        overflowX: "hidden",
+        overflowX: "auto",
       }}
     >
       <Box
@@ -137,7 +137,7 @@ const BetsTable = () => {
           overflowX: "auto",
           whiteSpace: "nowrap",
           "@media (max-width: 600px)": {
-            flexDirection: "column",
+            // flexDirection: "column",
             gap: "8px",
             padding: "4px",
           },
@@ -192,7 +192,7 @@ const BetsTable = () => {
           Race Leaderboard
         </Typography>
       </Box>
-      <Box sx={{ width: "100%", overflowX: "auto" }}>
+      <Box sx={{ width: "100%", overflow: "auto" }}>
         <Table
           sx={{
             width: "100%",

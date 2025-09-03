@@ -28,6 +28,7 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
   useEffect(() => {
     const updateCardWidth = () => {
       if (scrollRef.current && scrollRef.current.firstChild) {
+        // @ts-expect-error: ''
         setCardWidth(scrollRef.current.firstChild.clientWidth);
       }
     };
