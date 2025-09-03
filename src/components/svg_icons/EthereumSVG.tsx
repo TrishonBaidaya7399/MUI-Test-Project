@@ -10,7 +10,7 @@ function EthereumSVG() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_1_546)">
+        <g clipPath="url(#clip0_1_546)">
           <path
             d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"
             fill="#328332"
@@ -22,19 +22,19 @@ function EthereumSVG() {
           <path
             d="M11.355 7.988L7.99451 8.2765V6.087L11.355 7.988ZM7.99451 10.507C8.98451 9.947 10.263 9.225 11.4885 8.535C10.4505 10.156 9.16251 12.158 7.99451 13.976V10.507ZM7.99451 5.4725V2L11.4885 7.4225L7.99451 5.4725Z"
             fill="white"
-            fill-opacity="0.601"
+            fillOpacity="0.601"
           />
           <path
             opacity="0.2"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M7.99451 8.27654L11.3545 7.98804L7.99451 9.87554V8.27654Z"
             fill="white"
           />
           <path
             opacity="0.603"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M7.99404 8.27654L4.63354 7.98804L7.99404 9.87554V8.27654Z"
             fill="white"
           />

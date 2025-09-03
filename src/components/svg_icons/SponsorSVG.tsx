@@ -18,8 +18,8 @@ function SponsorSVG({
       >
         <path
           opacity="0.5"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M8.106 18.247C5.298 16.083 2 13.542 2 9.137C2 4.274 7.5 0.825 12 5.501V20.5C11 20.5 10 19.73 8.962 18.91C8.684 18.6927 8.39867 18.4717 8.106 18.247Z"
           fill={`${color}`}
         />

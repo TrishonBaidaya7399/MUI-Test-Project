@@ -167,19 +167,16 @@ body {
 
 @media (max-width: 768px) {
   .app-container {
-    max-width: 786px;
     padding: 0 16px;
   }
 }
 @media (max-width: 512px) {
   .app-container {
-    max-width: 396px;
     padding: 0 8px;
   }
 }
 @media (max-width: 400px) {
   .app-container {
-    max-width: 100%;
     padding: 0 8px;
   }
 }

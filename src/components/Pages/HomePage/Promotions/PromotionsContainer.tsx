@@ -128,7 +128,7 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
           width: "100%",
           boxSizing: "border-box",
           flexWrap: "nowrap",
-          maxWidth: "100vw",
+          maxWidth: "100%",
           "@media (max-width: 768px)": {
             padding: "0 8px",
           },

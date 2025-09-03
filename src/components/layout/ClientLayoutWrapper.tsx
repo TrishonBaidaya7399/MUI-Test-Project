@@ -32,7 +32,7 @@ export default function ClientLayoutWrapper({
         component="main"
         sx={{
           flexGrow: 1,
-          width: { lg: `calc(100% - ${currentDrawerWidth}px)` },
+          width: { xs: '100%',lg: `calc(100% - ${currentDrawerWidth}px)` },
           backgroundColor: "var(--background)",
           minHeight: "100vh",
           transition: theme.transitions.create("width", {

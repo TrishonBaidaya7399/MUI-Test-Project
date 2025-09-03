@@ -57,7 +57,7 @@ export default function PayingGames() {
                 width: "100%",
               }}
               priority={index === 0}
-              sizes="(max-width: 600px) 100vw, 50vw"
+              sizes="(max-width: 600px) 100%, 50%"
             />
           </Box>
           <Box
