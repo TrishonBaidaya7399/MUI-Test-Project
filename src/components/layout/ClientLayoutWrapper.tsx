@@ -42,7 +42,7 @@ export default function ClientLayoutWrapper({
         }}
       >
         <Toolbar />
-        <Box sx={{ p: { xs: 2, sm: 3 } }}>{children}</Box>
+        <Box sx={{ p: { xs: 1, sm: 3 } }}>{children}</Box>
       </Box>
     </Box>
   );

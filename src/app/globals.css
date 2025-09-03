@@ -173,8 +173,14 @@ body {
 }
 @media (max-width: 512px) {
   .app-container {
-    max-width: 402px;
-    padding: 0 16px;
+    max-width: 396px;
+    padding: 0 8px;
+  }
+}
+@media (max-width: 400px) {
+  .app-container {
+    max-width: 100%;
+    padding: 0 8px;
   }
 }
 

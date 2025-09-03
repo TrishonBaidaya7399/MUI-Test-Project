@@ -10,49 +10,49 @@
     {
       "rank": 2,
       "title": "Sweet Bonanza",
-      "image": "/TrendingGames/game01.avif",
+      "image": "/TrendingGames/game02.avif",
       "players": 348,
       "category": "casino"
     },
     {
       "rank": 3,
       "title": "Sugar Rush 1000",
-      "image": "/TrendingGames/game01.avif",
+      "image": "/TrendingGames/game03.avif",
       "players": 348,
       "category": "casino"
     },
     {
       "rank": 4,
       "title": "Wanted Dead or A Wild",
-      "image": "/TrendingGames/game01.avif",
+      "image": "/TrendingGames/game04.avif",
       "players": 348,
       "category": "casino"
     },
     {
       "rank": 5,
       "title": "Sweet Bonanza Super Scatter",
-      "image": "/TrendingGames/game01.avif",
+      "image": "/TrendingGames/game05.avif",
       "players": 348,
       "category": "casino"
     },
     {
       "rank": 6,
       "title": "Big Bass Reel Repeat",
-      "image": "/TrendingGames/game01.avif",
+      "image": "/TrendingGames/game06.avif",
       "players": 348,
       "category": "casino"
     },
     {
       "rank": 7,
       "title": "Le King",
-      "image": "/TrendingGames/game01.avif",
+      "image": "/TrendingGames/game07.avif",
       "players": 348,
       "category": "casino"
     },
     {
       "rank": 8,
       "title": "Gates Of Olympus Super Scatter",
-      "image": "/TrendingGames/game01.avif",
+      "image": "/TrendingGames/game08.avif",
       "players": 348,
       "category": "casino"
     },
@@ -66,7 +66,7 @@
     {
       "rank": 10,
       "title": "Wall Of Olympus Super Scatter",
-      "image": "/TrendingGames/game01.avif",
+      "image": "/TrendingGames/game02.avif",
       "players": 348,
       "category": "casino"
     }
@@ -82,49 +82,49 @@
     {
       "rank": 2,
       "title": "Tennis",
-      "image": "/TrendingSports/sports01.avif",
+      "image": "/TrendingSports/sports02.avif",
       "players": 348,
       "category": "sports"
     },
     {
       "rank": 3,
       "title": "Baseball",
-      "image": "/TrendingSports/sports01.avif",
+      "image": "/TrendingSports/sports03.avif",
       "players": 348,
       "category": "sports"
     },
     {
       "rank": 4,
       "title": "Cricket",
-      "image": "/TrendingSports/sports01.avif",
+      "image": "/TrendingSports/sports04.avif",
       "players": 348,
       "category": "sports"
     },
     {
       "rank": 5,
       "title": "Basketball",
-      "image": "/TrendingSports/sports01.avif",
+      "image": "/TrendingSports/sports05.avif",
       "players": 348,
       "category": "sports"
     },
     {
       "rank": 6,
       "title": "Horse Racing",
-      "image": "/TrendingSports/sports01.avif",
+      "image": "/TrendingSports/sports06.avif",
       "players": 348,
       "category": "sports"
     },
     {
       "rank": 7,
       "title": "CS2",
-      "image": "/TrendingSports/sports01.avif",
+      "image": "/TrendingSports/sports07.avif",
       "players": 348,
       "category": "sports"
     },
     {
       "rank": 8,
       "title": "League Of Legends",
-      "image": "/TrendingSports/sports01.avif",
+      "image": "/TrendingSports/sports08.avif",
       "players": 348,
       "category": "sports"
     }

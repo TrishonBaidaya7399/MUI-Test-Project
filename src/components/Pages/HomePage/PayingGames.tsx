@@ -23,7 +23,7 @@ export default function PayingGames() {
         display: "flex",
         gap: { xl: "60px", lg: "16px", xs: "16px" },
         marginInline: "auto",
-        flexDirection: { xs: "column", sm: "row" },
+        flexDirection: { xs: "column", md: "row" },
         justifyContent: "space-between",
       }}
     >
@@ -39,8 +39,8 @@ export default function PayingGames() {
           <Box
             sx={{
               position: "relative",
-              width: { xl: "400px", lg: "300px", xs: "100%" },
-              maxWidth: { xl: "400px", lg: "300px", xs: "100%" },
+              width: { xl: "400px",  xs: "100%" },
+              maxWidth: { xl: "400px",  xs: "100%" },
               borderRadius: '10px'
             }}
           >

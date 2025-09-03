@@ -17,7 +17,7 @@ export default function UserInfo() {
         display: "flex",
         alignItems: "start",
         flexDirection: "column",
-        width: "100%",
+        width: {xl: '33%', lg: '33%', xs: '100%'},
       }}
     >
       <Box sx={{ flexGrow: 1, width: "100%" }}>

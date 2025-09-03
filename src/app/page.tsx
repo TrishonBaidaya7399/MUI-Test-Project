@@ -70,9 +70,9 @@ export default function Page() {
         sx={{
           color: "var(--white)",
           display: "flex",
-          flexDirection: { xl: "row", xs: "column" },
-          justifyContent: { xl: "space-between", xs: "start" },
-          alignItems: { xl: "center", xs: "start" },
+          flexDirection: { lg: "row", xs: "column" },
+          justifyContent: { lg: "space-between", xs: "start" },
+          alignItems: { lg: "center", xs: "start" },
           gap: { xl: "60px", lg: "16px", xs: "16px" },
           marginTop: { lg: "36px", xs: "36px" },
           marginBottom: { lg: "36px", xs: "16px" },
