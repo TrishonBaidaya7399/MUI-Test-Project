@@ -2,7 +2,7 @@ import React from "react";
 
 function PointerIcon() {
   return (
-    <div>
+
       <svg
         width="16"
         height="16"
@@ -25,7 +25,7 @@ function PointerIcon() {
           fill="white"
         />
       </svg>
-    </div>
+   
   );
 }
 

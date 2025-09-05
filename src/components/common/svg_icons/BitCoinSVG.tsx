@@ -2,7 +2,6 @@ import React from "react";
 
 function BitCoinSVG() {
   return (
-    <div>
       <svg
         width="16"
         height="16"
@@ -26,7 +25,6 @@ function BitCoinSVG() {
           </clipPath>
         </defs>
       </svg>
-    </div>
   );
 }
 

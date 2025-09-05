@@ -62,7 +62,7 @@ const BetsTable = () => {
             padding: "8px",
             borderBottom: "none",
             // textAlign: "center",
-            // verticalAlign: "middle",
+            verticalAlign: "middle",
           }}
         >
           <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1 }}>
@@ -90,7 +90,7 @@ const BetsTable = () => {
             padding: "8px",
             borderBottom: "none",
             // textAlign: "center",
-            // verticalAlign: "middle",
+            verticalAlign: "middle",
           }}
         >
           <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1 }}>
@@ -109,7 +109,7 @@ const BetsTable = () => {
             padding: "8px",
             borderBottom: "none",
             // textAlign: "center",
-            // verticalAlign: "middle",
+            verticalAlign: "middle",
           }}
         >
           <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1 }}>
