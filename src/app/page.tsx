@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
+export const runtime = "edge";
+
 export const generateMetadata = async () => {
   const title = "Brand Name - Casino & Sports Betting Platform";
   const description =
@@ -41,15 +43,15 @@ export const generateMetadata = async () => {
 export default function Page() {
   return (
     <Box
-    className='app-container'
+      className="app-container"
       sx={{
-        width: {xl: "70%", md: '100%'},
+        width: { xl: "70%", md: "100%" },
         height: "60vh",
         display: "flex",
-        flexDirection: 'column',
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        gap: 4
+        gap: 4,
       }}
     >
       <Typography variant="h2" color="primary">
