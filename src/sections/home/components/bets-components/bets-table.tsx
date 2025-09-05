@@ -1,5 +1,5 @@
 "use client";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import {
   Box,
   Tab,
@@ -14,9 +14,15 @@ import {
 import { useState } from "react";
 import { mockBetsData } from "./mock-bets-data";
 
-const BitCoinSVG = dynamic(() => import('@/components/common/svg_icons/BitCoinSVG'));
-const EthereumSVG = dynamic(() => import('@/components/common/svg_icons/EthereumSVG'));
-const PointerIcon = dynamic(() => import('@/components/common/svg_icons/PointerIcon'));
+const BitCoinSVG = dynamic(
+  () => import("@/components/common/svg_icons/BitCoinSVG")
+);
+const EthereumSVG = dynamic(
+  () => import("@/components/common/svg_icons/EthereumSVG")
+);
+const PointerIcon = dynamic(
+  () => import("@/components/common/svg_icons/PointerIcon")
+);
 
 interface BetItem {
   game: string;
@@ -55,27 +61,22 @@ const BetsTable = () => {
             color: "var(--white)",
             padding: "8px",
             borderBottom: "none",
-            display: "flex",
-            flexDirection: "row",
-            gap: 1,
-            alignItems: "center",
+            // textAlign: "center",
+            // verticalAlign: "middle",
           }}
         >
-          <PointerIcon />
-          {row.game}
+          <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1 }}>
+            <PointerIcon />
+            {row.game}
+          </Box>
         </TableCell>
         <TableCell
           sx={{
             color: "var(--white)",
             padding: "8px",
             borderBottom: "none",
-            // display: "flex",
-            // flexDirection: "row",
-            // gap: 1,
-            // alignItems: "center",
           }}
         >
-          {/* <PointerIcon />  */}
           {row.user}
         </TableCell>
         <TableCell
@@ -88,14 +89,14 @@ const BetsTable = () => {
             color: "var(--white)",
             padding: "8px",
             borderBottom: "none",
-            display: "flex",
-            flexDirection: "row",
-            gap: 1,
-            alignItems: "center",
+            // textAlign: "center",
+            // verticalAlign: "middle",
           }}
         >
-          {row.betAmount}{" "}
-          {row.type === "bitcoin" ? <BitCoinSVG /> : <EthereumSVG />}
+          <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1 }}>
+            {row.betAmount}{" "}
+            {row.type === "bitcoin" ? <BitCoinSVG /> : <EthereumSVG />}
+          </Box>
         </TableCell>
         <TableCell
           sx={{ color: "var(--white)", padding: "8px", borderBottom: "none" }}
@@ -104,17 +105,17 @@ const BetsTable = () => {
         </TableCell>
         <TableCell
           sx={{
-            color: row.payout.startsWith("-") ? "var(--white)" : "var(--green)",
+            color: "var(--white)",
             padding: "8px",
             borderBottom: "none",
-            display: "flex",
-            flexDirection: "row",
-            gap: 1,
-            alignItems: "center",
+            // textAlign: "center",
+            // verticalAlign: "middle",
           }}
         >
-          {row.payout}{" "}
-          {row.type === "bitcoin" ? <BitCoinSVG /> : <EthereumSVG />}
+          <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1 }}>
+            {row.payout}{" "}
+            {row.type === "bitcoin" ? <BitCoinSVG /> : <EthereumSVG />}
+          </Box>
         </TableCell>
       </TableRow>
     ));
