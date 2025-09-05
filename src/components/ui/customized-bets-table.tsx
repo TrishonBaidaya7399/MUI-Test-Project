@@ -9,10 +9,10 @@ import {
   TableRow,
   Box,
 } from "@mui/material";
-import BitCoinSVG from "@/components/svg_icons/BitCoinSVG";
-import EthereumSVG from "@/components/svg_icons/EthereumSVG";
-import PointerIcon from "@/components/svg_icons/PointerIcon";
-import { mockBetsData } from "../Pages/HomePage/BetsComponents/mockBetsData";
+import BitCoinSVG from "@/components/common/svg_icons/BitCoinSVG";
+import EthereumSVG from "@/components/common/svg_icons/EthereumSVG";
+import PointerIcon from "@/components/common/svg_icons/PointerIcon";
+import { mockBetsData } from "../../sections/home/components/bets-components/mock-bets-data";
 
 interface BetItem {
   game: string;

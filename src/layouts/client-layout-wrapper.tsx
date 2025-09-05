@@ -1,9 +1,9 @@
 "use client";
 import type React from "react";
 import { Box, Toolbar, useTheme, useMediaQuery } from "@mui/material";
-import AppHeader from "./AppHeader";
-import AppSidebar from "./AppSidebar";
-import { useSidebarStore } from "@/store/sidebarStore";
+import AppHeader from "../components/layout/app-header";
+import AppSidebar from "../components/layout/app-sidebar";
+import { useSidebarStore } from "@/store/sidebar-store";
 
 const drawerWidth = 240;
 const collapsedDrawerWidth = 64;

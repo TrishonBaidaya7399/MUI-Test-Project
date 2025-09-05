@@ -1,5 +1,5 @@
 "use client";
-import SearchSVG from "@/components/svg_icons/SearchSVG";
+import SearchSVG from "@/components/common/svg_icons/SearchSVG";
 import {
   Box,
   Select,

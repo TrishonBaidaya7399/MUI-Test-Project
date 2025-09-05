@@ -1,5 +1,5 @@
 import type React from "react";
-import ClientLayoutWrapper from "./ClientLayoutWrapper";
+import ClientLayoutWrapper from "./client-layout-wrapper";
 
 interface MainLayoutProps {
   children: React.ReactNode;

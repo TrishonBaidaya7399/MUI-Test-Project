@@ -14,16 +14,16 @@ import {
 } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { ReactNode, useState } from "react";
-import { useSidebarStore } from "@/store/sidebarStore";
-import AnimatedHamburger from "../ui/AnimatedHamburger";
-import PromotionsSVG from "../svg_icons/PromotionsSVG";
-import AffiliateSVG from "../svg_icons/AffiliateSVG";
-import SponsorSVG from "../svg_icons/SponsorSVG";
-import LockSVG from "../svg_icons/LockSVG";
-import LiveSupportSVG from "../svg_icons/LiveSupportSVG";
-import TrophySVG from "../svg_icons/TroffeeSVG";
-import BlogSVG from "../svg_icons/BlogSVG";
-import ForumSVG from "../svg_icons/ForumSVG";
+import { useSidebarStore } from "@/store/sidebar-store";
+import AnimatedHamburger from "../ui/animated-hamburger";
+import PromotionsSVG from "../common/svg_icons/PromotionsSVG";
+import AffiliateSVG from "../common/svg_icons/AffiliateSVG";
+import SponsorSVG from "../common/svg_icons/SponsorSVG";
+import LockSVG from "../common/svg_icons/LockSVG";
+import LiveSupportSVG from "../common/svg_icons/LiveSupportSVG";
+import TrophySVG from "../common/svg_icons/TroffeeSVG";
+import BlogSVG from "../common/svg_icons/BlogSVG";
+import ForumSVG from "../common/svg_icons/ForumSVG";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const drawerWidth = 240;

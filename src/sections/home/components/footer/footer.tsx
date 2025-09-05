@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
-import FacebookIconSVG from "@/components/svg_icons/FacebookIconSVG";
-import XIconSVG from "@/components/svg_icons/XIconSVG";
-import MessageIconSVG from "@/components/svg_icons/MessageIconSVG";
-import InstaIconSVG from "@/components/svg_icons/InstaIconSVG";
-import YoutubeIconSVG from "@/components/svg_icons/YoutubeIconSVG";
-import TiktokIconSVG from "@/components/svg_icons/TiktokIconSVG";
-import LinkedinIconSVG from "@/components/svg_icons/LinkedinIconSVG";
+import FacebookIconSVG from "@/components/common/svg_icons/FacebookIconSVG";
+import XIconSVG from "@/components/common/svg_icons/XIconSVG";
+import MessageIconSVG from "@/components/common/svg_icons/MessageIconSVG";
+import InstaIconSVG from "@/components/common/svg_icons/InstaIconSVG";
+import YoutubeIconSVG from "@/components/common/svg_icons/YoutubeIconSVG";
+import TiktokIconSVG from "@/components/common/svg_icons/TiktokIconSVG";
+import LinkedinIconSVG from "@/components/common/svg_icons/LinkedinIconSVG";
 import Link from "next/link";
 
 const Footer = () => {

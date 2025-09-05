@@ -2,7 +2,7 @@
 import { Box, Typography, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useRef, useState, useEffect } from "react";
-import GameCard from "./GameCard";
+import GameCard from "./game-card";
 
 interface TrendingItem {
   rank: number;

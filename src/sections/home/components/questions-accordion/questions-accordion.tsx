@@ -1,7 +1,7 @@
 "use client";
 import dynamic from 'next/dynamic';
 import React from "react";
-import questionsData from "@/lib/data/questions.json";
+import questionsData from "@/services/data/questions.json";
 import {
   Accordion,
   AccordionDetails,

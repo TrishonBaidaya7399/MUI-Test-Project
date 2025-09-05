@@ -1,28 +1,4 @@
-import dynamic from "next/dynamic";
-
-const MainLayout = dynamic(() => import("@/components/layout/MainLayout"));
-const BetsTable = dynamic(
-  () => import("@/components/Pages/HomePage/BetsComponents/BetsTable")
-);
-const Footer = dynamic(
-  () => import("@/components/Pages/HomePage/Footer/Footer")
-);
-const PayingGames = dynamic(
-  () => import("@/components/Pages/HomePage/PayingGames")
-);
-const PromotionsContainer = dynamic(
-  () => import("@/components/Pages/HomePage/Promotions/PromotionsContainer")
-);
-const QuestionsAccordion = dynamic(
-  () =>
-    import("@/components/Pages/HomePage/QuestionsAccordion/QuestionsAccordion")
-);
-const TrendingContainer = dynamic(
-  () => import("@/components/Pages/HomePage/Trending/TrendingContainer")
-);
-const UserInfo = dynamic(() => import("@/components/Pages/HomePage/UserInfo"));
-import { Box } from "@mui/material";
-import { mockPromotions } from "@/components/Pages/HomePage/Promotions/mockPromotions";
+import { Box, Typography } from "@mui/material";
 
 export const generateMetadata = async () => {
   const title = "Brand Name - Casino & Sports Betting Platform";
@@ -64,33 +40,27 @@ export const generateMetadata = async () => {
 
 export default function Page() {
   return (
-    <MainLayout>
-      {/* top section */}
-      <Box
-        sx={{
-          color: "var(--white)",
-          display: "flex",
-          flexDirection: { lg: "row", xs: "column" },
-          justifyContent: { lg: "space-between", xs: "start" },
-          alignItems: { lg: "center", xs: "start" },
-          gap: { xl: "60px", lg: "16px", xs: "16px" },
-          marginTop: { lg: "36px", xs: "36px" },
-          marginBottom: { lg: "36px", xs: "16px" },
-        }}
-        className="app-container"
-      >
-        <UserInfo />
-        <PayingGames />
-      </Box>
-      {/* trending section */}
-      <TrendingContainer />
-      {/* promotions section */}
-      <PromotionsContainer items={mockPromotions} title="Promotions" />
-      <div className="app-container">
-        <BetsTable />
-      </div>
-      <QuestionsAccordion />
-      <Footer />
-    </MainLayout>
+    <Box
+    className='app-container'
+      sx={{
+        width: {xl: "70%", md: '100%'},
+        height: "60vh",
+        display: "flex",
+        flexDirection: 'column',
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 4
+      }}
+    >
+      <Typography variant="h2" color="primary">
+        Casino & Sports Betting Platform
+      </Typography>
+      <Typography variant="body1" color="primary" align="center">
+        Join Brand Name, a leading online gambling platform since 2017, offering
+        a wide variety of casino games, sports betting, and eSports with
+        unbeatable odds. Enjoy secure betting with over 20 cryptocurrencies,
+        exclusive VIP Club benefits, and regular promotions.
+      </Typography>
+    </Box>
   );
 }

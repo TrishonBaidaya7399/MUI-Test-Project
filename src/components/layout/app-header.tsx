@@ -9,8 +9,8 @@ import {
   useTheme,
 } from "@mui/material";
 import { Icon } from "@iconify/react";
-import AnimatedHamburger from "../ui/AnimatedHamburger";
-import { useSidebarStore } from "@/store/sidebarStore";
+import AnimatedHamburger from "../ui/animated-hamburger";
+import { useSidebarStore } from "@/store/sidebar-store";
 import Image from "next/image";
 
 const drawerWidth = 240;

@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { PromotionItem } from "./PromotionsContainer";
+import { PromotionItem } from "./promotions-container";
 
 function PromotionCard({ item }: { item: PromotionItem }) {
   return (
