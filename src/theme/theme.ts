@@ -37,7 +37,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: tokens.typography.fontFamily,
     h1: tokens.typography.h1,
     h2: tokens.typography.h2,
     h3: tokens.typography.h3,
@@ -47,7 +47,7 @@ export const theme = createTheme({
     body1: tokens.typography.body1,
     body2: tokens.typography.body2,
   },
-  spacing: 8, 
+  spacing: tokens.spacing.base, 
   shape: {
     borderRadius: tokens.shape.borderRadius,
   },

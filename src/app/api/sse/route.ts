@@ -6,7 +6,12 @@ export async function GET() {
       let counter = 0;
       const interval = setInterval(() => {
         controller.enqueue(
-          encoder.encode(`data: ${JSON.stringify({ time: new Date(), count: counter++ })}\n\n`)
+          encoder.encode(
+            `data: ${JSON.stringify({
+              time: new Date(),
+              count: counter++,
+            })}\n\n`
+          )
         );
       }, 1000);
 
