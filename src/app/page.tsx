@@ -1,4 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import { Button } from "../components/ui/button";
+import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 export const runtime = "edge";
 
@@ -63,6 +66,18 @@ export default function Page() {
         unbeatable odds. Enjoy secure betting with over 20 cryptocurrencies,
         exclusive VIP Club benefits, and regular promotions.
       </Typography>
+      <Link href="/home">
+        <Button variant='secondary' sx={{ fontSize: "20px" }}>
+          {" "}
+          <Icon
+            icon={"mynaui:home-solid"}
+            style={{
+              fontSize: 20,
+            }}
+          />{" "}
+          Go to Home
+        </Button>
+      </Link>
     </Box>
   );
 }
