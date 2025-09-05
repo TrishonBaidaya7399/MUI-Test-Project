@@ -4,7 +4,7 @@ import { Box, Typography, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useRef, useState, useEffect } from "react";
 
-const PromotionCard = dynamic(() => import('./PromotionCard'));
+const PromotionCard = dynamic(() => import('./promotion-card'));
 export interface PromotionItem {
   type: string;
   title: string;
