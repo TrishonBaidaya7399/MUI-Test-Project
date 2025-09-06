@@ -1,4 +1,9 @@
 import { Box, Typography } from "@mui/material";
+import { Button } from "../components/ui/button";
+import { Icon } from "@iconify/react";
+import Link from "next/link";
+
+export const runtime = "edge";
 
 export const generateMetadata = async () => {
   const title = "Brand Name - Casino & Sports Betting Platform";
@@ -41,15 +46,15 @@ export const generateMetadata = async () => {
 export default function Page() {
   return (
     <Box
-    className='app-container'
+      className="app-container"
       sx={{
-        width: {xl: "70%", md: '100%'},
+        width: { xl: "70%", md: "100%" },
         height: "60vh",
         display: "flex",
-        flexDirection: 'column',
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        gap: 4
+        gap: 4,
       }}
     >
       <Typography variant="h2" color="primary">
@@ -61,6 +66,18 @@ export default function Page() {
         unbeatable odds. Enjoy secure betting with over 20 cryptocurrencies,
         exclusive VIP Club benefits, and regular promotions.
       </Typography>
+      <Link href="/home">
+        <Button variant='secondary' sx={{ fontSize: "20px" }}>
+          {" "}
+          <Icon
+            icon={"mynaui:home-solid"}
+            style={{
+              fontSize: 20,
+            }}
+          />{" "}
+          Go to Home
+        </Button>
+      </Link>
     </Box>
   );
 }

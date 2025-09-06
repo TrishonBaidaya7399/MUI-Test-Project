@@ -2,7 +2,6 @@ import React from "react";
 
 function EthereumSVG() {
   return (
-    <div>
       <svg
         width="16"
         height="16"
@@ -45,7 +44,6 @@ function EthereumSVG() {
           </clipPath>
         </defs>
       </svg>
-    </div>
   );
 }
 
