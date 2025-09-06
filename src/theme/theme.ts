@@ -1,10 +1,9 @@
-"use client";
 import { createTheme, PaletteMode, Theme } from "@mui/material/styles";
 import tokens from "./tokens.json";
 
 export const theme = createTheme({
   palette: { ...tokens.palette, mode: tokens.palette.mode as PaletteMode },
-  spacing: tokens.spacing,
+  spacing: (factor: number) => tokens.spacing * factor, 
   shape: tokens.shape,
   typography: tokens.typography,
   shadows: [
@@ -16,17 +15,17 @@ export const theme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        root: ({ theme }: { theme: Theme }) => ({
+        root: ({ ownerState, theme }: { ownerState: any; theme: Theme }) => ({
           borderRadius: theme.shape.borderRadius,
           textTransform: "none",
-          paddingInline: theme.spacing(2),
-          paddingBlock: theme.spacing(1.25),
+          paddingInline: 2, 
+          paddingBlock: 1,
         }),
       },
     },
     MuiCard: {
       styleOverrides: {
-        root: ({ theme }: { theme: Theme }) => ({
+        root: ({ ownerState, theme }: { ownerState: any; theme: Theme }) => ({
           borderRadius: theme.shape.borderRadius,
           backgroundColor: theme.palette.background.paper,
         }),

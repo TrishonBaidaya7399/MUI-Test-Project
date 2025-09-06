@@ -57,14 +57,14 @@ const BetsTable = () => {
           "&:nth-of-type(even)": {
             backgroundColor: theme.palette.background.default,
           },
-          height: theme.spacing(6),
-          mt: { lg: theme.spacing(4.5), xs: theme.spacing(2) },
+          height: 6,
+          mt: { lg: 4.5, xs: 2 },
         }}
       >
         <TableCell
           sx={{
             color: theme.palette.text.primary,
-            p: theme.spacing(1),
+            p: 1,
             borderBottom: "none",
             // textAlign: "center",
             verticalAlign: "middle",
@@ -74,7 +74,7 @@ const BetsTable = () => {
             sx={{
               display: "inline-flex",
               alignItems: "center",
-              gap: theme.spacing(1),
+              gap: 1,
             }}
           >
             <PointerIcon />
@@ -84,7 +84,7 @@ const BetsTable = () => {
         <TableCell
           sx={{
             color: theme.palette.text.primary,
-            padding: theme.spacing(1),
+            padding: 1,
             borderBottom: "none",
           }}
         >
@@ -93,7 +93,7 @@ const BetsTable = () => {
         <TableCell
           sx={{
             color: theme.palette.text.primary,
-            padding: theme.spacing(1),
+            padding: 1,
             borderBottom: "none",
           }}
         >
@@ -102,7 +102,7 @@ const BetsTable = () => {
         <TableCell
           sx={{
             color: theme.palette.text.primary,
-            padding: theme.spacing(1),
+            padding: 1,
             borderBottom: "none",
             // textAlign: "center",
             verticalAlign: "middle",
@@ -116,7 +116,7 @@ const BetsTable = () => {
         <TableCell
           sx={{
             color: theme.palette.text.primary,
-            padding: theme.spacing(1),
+            padding: 1,
             borderBottom: "none",
           }}
         >
@@ -125,7 +125,7 @@ const BetsTable = () => {
         <TableCell
           sx={{
             color: theme.palette.text.primary,
-            padding: theme.spacing(1),
+            padding: 1,
             borderBottom: "none",
             // textAlign: "center",
             verticalAlign: "middle",
@@ -151,17 +151,17 @@ const BetsTable = () => {
       <Box
         sx={{
           display: "flex",
-          gap: theme.spacing(2),
-          mb: theme.spacing(1.25),
-          padding: theme.spacing(1),
+          gap: 2,
+          mb: 1.25,
+          padding: 1,
           backgroundColor: theme.palette.background.paper,
           borderRadius: 1,
           overflowX: "auto",
           whiteSpace: "nowrap",
           "@media (max-width: 600px)": {
             // flexDirection: "column",
-            gap: theme.spacing(1),
-            padding: theme.spacing(0.5),
+            gap: 1,
+            padding: 0.5,
           },
         }}
       >
@@ -170,8 +170,8 @@ const BetsTable = () => {
             color: theme.palette.text.primary,
             fontSize: theme.typography.body2.fontSize,
             fontWeight: theme.typography.fontWeightMedium,
-            px: theme.spacing(2), // 16px
-            py: theme.spacing(1.25), // 10px
+            px: 2, // 16px
+            py: 1.25, // 10px
             backgroundColor:
               selectedTab === 0 ? theme.palette.action.selected : "transparent",
             borderRadius: theme.shape.borderRadius,
@@ -187,8 +187,8 @@ const BetsTable = () => {
             color: theme.palette.text.primary,
             fontSize: theme.typography.body2.fontSize,
             fontWeight: theme.typography.fontWeightMedium,
-            px: theme.spacing(2), // 16px
-            py: theme.spacing(1.25), // 10px
+            px: 2, // 16px
+            py: 1.25, // 10px
             backgroundColor:
               selectedTab === 1 ? theme.palette.action.selected : "transparent",
             borderRadius: theme.shape.borderRadius,
@@ -204,8 +204,8 @@ const BetsTable = () => {
             color: theme.palette.text.primary,
             fontSize: theme.typography.body2.fontSize,
             fontWeight: theme.typography.fontWeightMedium,
-            px: theme.spacing(2), // 16px
-            py: theme.spacing(1.25), // 10px
+            px: 2, // 16px
+            py: 1.25, // 10px
             backgroundColor:
               selectedTab === 2 ? theme.palette.action.selected : "transparent",
             borderRadius: theme.shape.borderRadius,
@@ -221,7 +221,7 @@ const BetsTable = () => {
         sx={{
           display: "flex",
           overflowX: "auto",
-          gap: theme.spacing(2),
+          gap: 2,
           "&::-webkit-scrollbar": { display: "none" },
           scrollbarWidth: "none",
           width: "100%",
@@ -229,11 +229,11 @@ const BetsTable = () => {
           flexWrap: "nowrap",
           maxWidth: "100%",
           "@media (max-width: 768px)": {
-            px: theme.spacing(1),
+            px: 1,
             py: 0
           },
           "@media (max-width: 480px)": {
-            px: theme.spacing(0.5),
+            px: 0.5,
             py: 0
           },
         }}
@@ -253,13 +253,13 @@ const BetsTable = () => {
             <TableRow
               sx={{
                 backgroundColor: theme.palette.background.default,
-                height: theme.spacing(6),
+                height: 6,
               }}
             >
               <TableCell
                 sx={{
                   color: theme.palette.text.secondary,
-                  padding: theme.spacing(1),
+                  padding: 1,
                   borderBottom: "none",
                   fontWeight: theme.typography.fontWeightMedium,
                 }}
@@ -269,7 +269,7 @@ const BetsTable = () => {
               <TableCell
                 sx={{
                   color: theme.palette.text.secondary,
-                  padding: theme.spacing(1),
+                  padding: 1,
                   borderBottom: "none",
                   fontWeight: theme.typography.fontWeightMedium,
                 }}
@@ -279,7 +279,7 @@ const BetsTable = () => {
               <TableCell
                 sx={{
                   color: theme.palette.text.secondary,
-                  padding: theme.spacing(1),
+                  padding: 1,
                   borderBottom: "none",
                   fontWeight: theme.typography.fontWeightMedium,
                 }}
@@ -289,7 +289,7 @@ const BetsTable = () => {
               <TableCell
                 sx={{
                   color: theme.palette.text.secondary,
-                  padding: theme.spacing(1),
+                  padding: 1,
                   borderBottom: "none",
                   fontWeight: theme.typography.fontWeightMedium,
                 }}
@@ -299,7 +299,7 @@ const BetsTable = () => {
               <TableCell
                 sx={{
                   color: theme.palette.text.secondary,
-                  padding: theme.spacing(1),
+                  padding: 1,
                   borderBottom: "none",
                   fontWeight: theme.typography.fontWeightMedium,
                 }}
@@ -309,7 +309,7 @@ const BetsTable = () => {
               <TableCell
                 sx={{
                   color: theme.palette.text.secondary,
-                  padding: theme.spacing(1),
+                  padding: 1,
                   borderBottom: "none",
                   fontWeight: theme.typography.fontWeightMedium,
                 }}

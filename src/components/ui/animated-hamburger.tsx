@@ -21,7 +21,7 @@ export default function AnimatedHamburger({
         background: "none",
         border: "none",
         cursor: "pointer",
-        padding: theme.spacing(0),
+        padding: 0,
         width: "fit-content",
         height: "fit-content",
         display: "flex",

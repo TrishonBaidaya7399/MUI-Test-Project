@@ -27,7 +27,7 @@ import ForumSVG from "../common/svg_icons/ForumSVG";
 import MenuIcon from "@mui/icons-material/Menu";
 import { theme } from "@/theme/theme";
 
-const drawerWidth = theme.spacing(30);
+const drawerWidth = 30;
 
 interface MenuItem {
   text: string;
@@ -98,7 +98,7 @@ export default function AppSidebar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            gap: theme.spacing(1.5),
+            gap: 1.5,
             width: "100%",
           }}
         >
@@ -117,7 +117,7 @@ export default function AppSidebar() {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: theme.spacing(1),
+                gap: 1,
               }}
             >
               <Button
@@ -130,8 +130,8 @@ export default function AppSidebar() {
                   fontSize: theme.typography.body2.fontSize,
                   fontWeight: theme.typography.fontWeightMedium,
                   minWidth: "auto",
-                  height: theme.spacing(5.5),
-                  px: theme.spacing(2),
+                  height: 5.5,
+                  px: 2,
                   "&:hover": {
                     backgroundColor: theme.palette.secondary.main,
                     color: theme.palette.text.primary,
@@ -150,7 +150,7 @@ export default function AppSidebar() {
                   fontSize: theme.typography.body2.fontSize,
                   fontWeight: theme.typography.fontWeightMedium,
                   minWidth: "auto",
-                  height: theme.spacing(5.5),
+                  height: 5.5,
                   px: 2,
                   "&:hover": {
                     backgroundColor: theme.palette.secondary.main,
@@ -168,8 +168,8 @@ export default function AppSidebar() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: theme.spacing(1),
-          padding: theme.spacing(2),
+          gap: 1,
+          padding: 2,
         }}
       >
         <List
@@ -186,9 +186,9 @@ export default function AppSidebar() {
                 <ListItemButton
                   onClick={() => item.children && handleItemClick(item.text)}
                   sx={{
-                    p: theme.spacing(1.25),
+                    p: 1.25,
                     borderRadius: theme.shape.borderRadius,
-                    minHeight: theme.spacing(6),
+                    minHeight: 6,
                     justifyContent: isExpanded ? "initial" : "center",
                     "&:hover": {
                       backgroundColor: theme.palette.grey[100],
@@ -197,8 +197,8 @@ export default function AppSidebar() {
                 >
                   <ListItemIcon
                     sx={{
-                      minWidth: isExpanded ? theme.spacing(5) : "auto",
-                      mr: isExpanded ? theme.spacing(1) : 0,
+                      minWidth: isExpanded ? 5 : "auto",
+                      mr: isExpanded ? 1 : 0,
                       justifyContent: "center",
                     }}
                   >
@@ -232,7 +232,7 @@ export default function AppSidebar() {
                               : "mdi:chevron-down"
                           }
                           style={{
-                            fontSize: theme.spacing(2.5),
+                            fontSize: 2.5,
                             color: theme.palette.common.white,
                           }}
                         />
@@ -253,8 +253,8 @@ export default function AppSidebar() {
                       <ListItem key={child.text} disablePadding>
                         <ListItemButton
                           sx={{
-                            pl: theme.spacing(4),
-                            mx: theme.spacing(1),
+                            pl: 4,
+                            mx: 1,
                             borderRadius: theme.shape.borderRadius,
                             "&:hover": {
                               backgroundColor: theme.palette.grey[100],
@@ -266,7 +266,7 @@ export default function AppSidebar() {
                               <Icon
                                 icon={child.icon}
                                 style={{
-                                  fontSize: theme.spacing(2.5),
+                                  fontSize: 2.5,
                                   color: theme.palette.common.white,
                                 }}
                               />
@@ -304,9 +304,9 @@ export default function AppSidebar() {
                 <ListItemButton
                   onClick={() => item.children && handleItemClick(item.text)}
                   sx={{
-                    p: theme.spacing(1.25),
+                    p: 1.25,
                     borderRadius: theme.shape.borderRadius,
-                    minHeight: theme.spacing(6),
+                    minHeight: 6,
                     justifyContent: isExpanded ? "initial" : "center",
                     "&:hover": {
                       backgroundColor: theme.palette.grey[100],
@@ -315,8 +315,8 @@ export default function AppSidebar() {
                 >
                   <ListItemIcon
                     sx={{
-                      minWidth: isExpanded ? theme.spacing(5) : "auto",
-                      mr: isExpanded ? theme.spacing(1) : 0,
+                      minWidth: isExpanded ? 5 : "auto",
+                      mr: isExpanded ? 1 : 0,
                       justifyContent: "center",
                     }}
                   >
@@ -371,15 +371,15 @@ export default function AppSidebar() {
                       <ListItem key={child.text} disablePadding>
                         <ListItemButton
                           sx={{
-                            pl: theme.spacing(4),
-                            mx: theme.spacing(1),
+                            pl: 4,
+                            mx: 1,
                             borderRadius: theme.shape.borderRadius,
                             "&:hover": {
                               backgroundColor: theme.palette.grey[100],
                             },
                           }}
                         >
-                          <ListItemIcon sx={{ minWidth: theme.spacing(5) }}>
+                          <ListItemIcon sx={{ minWidth: 5 }}>
                             {typeof child.icon === "string" ? (
                               <Icon
                                 icon={child.icon}

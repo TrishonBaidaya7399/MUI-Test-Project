@@ -1,13 +1,12 @@
-"use client";
 import type React from "react";
-import { Box, Toolbar, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Toolbar, useMediaQuery } from "@mui/material";
 import AppHeader from "../components/layout/app-header";
 import AppSidebar from "../components/layout/app-sidebar";
 import { useSidebarStore } from "@/store/sidebar-store";
 import { theme } from "@/theme/theme";
 
-const drawerWidth = theme.spacing(30);
-const collapsedDrawerWidth = theme.spacing(8);
+const drawerWidth = 30;
+const collapsedDrawerWidth = 8;
 
 interface ClientLayoutWrapperProps {
   children: React.ReactNode;
@@ -16,7 +15,6 @@ interface ClientLayoutWrapperProps {
 export default function ClientLayoutWrapper({
   children,
 }: ClientLayoutWrapperProps) {
-  const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const { collapsed, hovered } = useSidebarStore();
@@ -43,7 +41,7 @@ export default function ClientLayoutWrapper({
         }}
       >
         <Toolbar />
-        <Box sx={{ p: { xs: theme.spacing(1), sm: theme.spacing(3) } }}>
+        <Box sx={{ p: { xs: 1, sm: 3 } }}>
           {children}
         </Box>
       </Box>
