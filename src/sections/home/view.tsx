@@ -24,6 +24,7 @@ const UserInfo = dynamic(
   () => import("@/sections/home/components/user-info/user-info")
 );
 import { Box } from "@mui/material";
+import { theme } from "@/theme/theme";
 
 
 function HomePageView() {
@@ -32,17 +33,17 @@ function HomePageView() {
       {/* top section */}
       <Box
         sx={{
-          color: "var(--white)",
+          color: theme.palette.common.white,
           display: "flex",
           flexDirection: { lg: "row", xs: "column" },
           justifyContent: { lg: "space-between", xs: "start" },
           alignItems: { lg: "center", xs: "start" },
-          gap: { xl: "60px", lg: "16px", xs: "16px" },
-          marginTop: { lg: "36px", xs: "36px" },
-          marginBottom: { lg: "36px", xs: "16px" },
+          gap: { xl: theme.spacing(7.5), lg: theme.spacing(2), xs: theme.spacing(2) } ,
+     marginTop: { lg: theme.spacing(4.5), xs: theme.spacing(4.5) }, 
+marginBottom: { lg: theme.spacing(4.5), xs: theme.spacing(2) }, 
         }}
         className="app-container"
-      >
+      >s
         <UserInfo />
         <PayingGames />
       </Box>

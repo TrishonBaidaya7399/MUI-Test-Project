@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { mockBetsData } from "./mock-bets-data";
+import { theme } from "@/theme/theme";
 
 const BitCoinSVG = dynamic(
   () => import("@/components/common/svg_icons/BitCoinSVG")
@@ -50,44 +51,58 @@ const BetsTable = () => {
       <TableRow
         key={row._id}
         sx={{
-          "&:nth-of-type(odd)": { backgroundColor: "var(--background-card)" },
-          "&:nth-of-type(even)": { backgroundColor: "var(--background-3)" },
-          height: "48px",
-          marginTop: { lg: "36px", xs: "16px" },
+          "&:nth-of-type(odd)": {
+            backgroundColor: theme.palette.background.paper,
+          },
+          "&:nth-of-type(even)": {
+            backgroundColor: theme.palette.background.default,
+          },
+          height: theme.spacing(6),
+          mt: { lg: theme.spacing(4.5), xs: theme.spacing(2) },
         }}
       >
         <TableCell
           sx={{
-            color: "var(--white)",
-            padding: "8px",
+            color: theme.palette.text.primary,
+            p: theme.spacing(1),
             borderBottom: "none",
             // textAlign: "center",
             verticalAlign: "middle",
           }}
         >
-          <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1 }}>
+          <Box
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: theme.spacing(1),
+            }}
+          >
             <PointerIcon />
             {row.game}
           </Box>
         </TableCell>
         <TableCell
           sx={{
-            color: "var(--white)",
-            padding: "8px",
+            color: theme.palette.text.primary,
+            padding: theme.spacing(1),
             borderBottom: "none",
           }}
         >
           {row.user}
         </TableCell>
         <TableCell
-          sx={{ color: "var(--white)", padding: "8px", borderBottom: "none" }}
+          sx={{
+            color: theme.palette.text.primary,
+            padding: theme.spacing(1),
+            borderBottom: "none",
+          }}
         >
           {row.time}
         </TableCell>
         <TableCell
           sx={{
-            color: "var(--white)",
-            padding: "8px",
+            color: theme.palette.text.primary,
+            padding: theme.spacing(1),
             borderBottom: "none",
             // textAlign: "center",
             verticalAlign: "middle",
@@ -99,14 +114,18 @@ const BetsTable = () => {
           </Box>
         </TableCell>
         <TableCell
-          sx={{ color: "var(--white)", padding: "8px", borderBottom: "none" }}
+          sx={{
+            color: theme.palette.text.primary,
+            padding: theme.spacing(1),
+            borderBottom: "none",
+          }}
         >
           {row.multiplier}
         </TableCell>
         <TableCell
           sx={{
-            color: "var(--white)",
-            padding: "8px",
+            color: theme.palette.text.primary,
+            padding: theme.spacing(1),
             borderBottom: "none",
             // textAlign: "center",
             verticalAlign: "middle",
@@ -124,7 +143,7 @@ const BetsTable = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "var(--background-3)",
+        backgroundColor: theme.palette.background.default,
         width: "100%",
         overflowX: "auto",
       }}
@@ -132,29 +151,30 @@ const BetsTable = () => {
       <Box
         sx={{
           display: "flex",
-          gap: "16px",
-          mb: "10px",
-          padding: "8px",
-          backgroundColor: "var(--background-1)",
+          gap: theme.spacing(2),
+          mb: theme.spacing(1.25),
+          padding: theme.spacing(1),
+          backgroundColor: theme.palette.background.paper,
           borderRadius: 1,
           overflowX: "auto",
           whiteSpace: "nowrap",
           "@media (max-width: 600px)": {
             // flexDirection: "column",
-            gap: "8px",
-            padding: "4px",
+            gap: theme.spacing(1),
+            padding: theme.spacing(0.5),
           },
         }}
       >
         <Typography
           sx={{
-            color: "var(--white)",
-            fontSize: "14px",
-            fontWeight: 500,
-            padding: "10px 14px",
+            color: theme.palette.text.primary,
+            fontSize: theme.typography.body2.fontSize,
+            fontWeight: theme.typography.fontWeightMedium,
+            px: theme.spacing(2), // 16px
+            py: theme.spacing(1.25), // 10px
             backgroundColor:
-              selectedTab === 0 ? "var(--white-2)" : "transparent",
-            borderRadius: 1,
+              selectedTab === 0 ? theme.palette.action.selected : "transparent",
+            borderRadius: theme.shape.borderRadius,
             cursor: "pointer",
             display: "inline-block",
           }}
@@ -164,13 +184,14 @@ const BetsTable = () => {
         </Typography>
         <Typography
           sx={{
-            color: "var(--white)",
-            fontSize: "14px",
-            fontWeight: 500,
-            padding: "10px 14px",
+            color: theme.palette.text.primary,
+            fontSize: theme.typography.body2.fontSize,
+            fontWeight: theme.typography.fontWeightMedium,
+            px: theme.spacing(2), // 16px
+            py: theme.spacing(1.25), // 10px
             backgroundColor:
-              selectedTab === 1 ? "var(--white-2)" : "transparent",
-            borderRadius: 1,
+              selectedTab === 1 ? theme.palette.action.selected : "transparent",
+            borderRadius: theme.shape.borderRadius,
             cursor: "pointer",
             display: "inline-block",
           }}
@@ -180,13 +201,14 @@ const BetsTable = () => {
         </Typography>
         <Typography
           sx={{
-            color: "var(--white)",
-            fontSize: "14px",
-            fontWeight: 500,
-            padding: "10px 14px",
+            color: theme.palette.text.primary,
+            fontSize: theme.typography.body2.fontSize,
+            fontWeight: theme.typography.fontWeightMedium,
+            px: theme.spacing(2), // 16px
+            py: theme.spacing(1.25), // 10px
             backgroundColor:
-              selectedTab === 2 ? "var(--white-2)" : "transparent",
-            borderRadius: 1,
+              selectedTab === 2 ? theme.palette.action.selected : "transparent",
+            borderRadius: theme.shape.borderRadius,
             cursor: "pointer",
             display: "inline-block",
           }}
@@ -199,7 +221,7 @@ const BetsTable = () => {
         sx={{
           display: "flex",
           overflowX: "auto",
-          gap: "16px",
+          gap: theme.spacing(2),
           "&::-webkit-scrollbar": { display: "none" },
           scrollbarWidth: "none",
           width: "100%",
@@ -207,84 +229,89 @@ const BetsTable = () => {
           flexWrap: "nowrap",
           maxWidth: "100%",
           "@media (max-width: 768px)": {
-            padding: "0 8px",
+            px: theme.spacing(1),
+            py: 0
           },
           "@media (max-width: 480px)": {
-            padding: "0 4px",
+            px: theme.spacing(0.5),
+            py: 0
           },
         }}
       >
         <Table
           sx={{
-            width: "1200px",
-            minWidth: "1200px",
+           width: '100%',
+           minWidth: { xs: '100%', md: 1200 },
             borderCollapse: "separate",
             borderSpacing: 0,
             "@media (max-width: 600px)": {
-              minWidth: "1200px",
+             minWidth: { xs: '100%', md: 1200 },
             },
           }}
         >
           <TableHead>
             <TableRow
-              sx={{ backgroundColor: "var(--background-3)", height: "48px" }}
+              sx={{
+                backgroundColor: theme.palette.background.default,
+                height: theme.spacing(6),
+              }}
             >
               <TableCell
                 sx={{
-                  color: "var(--text-gray)",
-                  padding: "8px",
+                  color: theme.palette.text.secondary,
+                  padding: theme.spacing(1),
                   borderBottom: "none",
-                  fontWeight: 500,
+                  fontWeight: theme.typography.fontWeightMedium,
                 }}
               >
                 Game
               </TableCell>
               <TableCell
                 sx={{
-                  color: "var(--text-gray)",
-                  padding: "8px",
+                  color: theme.palette.text.secondary,
+                  padding: theme.spacing(1),
                   borderBottom: "none",
-                  fontWeight: 500,
+                  fontWeight: theme.typography.fontWeightMedium,
                 }}
               >
                 User
               </TableCell>
               <TableCell
                 sx={{
-                  color: "var(--text-gray)",
-                  padding: "8px",
+                  color: theme.palette.text.secondary,
+                  padding: theme.spacing(1),
                   borderBottom: "none",
-                  fontWeight: 500,
+                  fontWeight: theme.typography.fontWeightMedium,
                 }}
               >
                 Time
               </TableCell>
               <TableCell
                 sx={{
-                  color: "var(--text-gray)",
-                  padding: "8px",
+                  color: theme.palette.text.secondary,
+                  padding: theme.spacing(1),
                   borderBottom: "none",
-                  fontWeight: 500,
+                  fontWeight: theme.typography.fontWeightMedium,
                 }}
               >
                 Bet Amount
               </TableCell>
               <TableCell
                 sx={{
-                  color: "var(--text-gray)",
-                  padding: "8px",
+                  color: theme.palette.text.secondary,
+                  padding: theme.spacing(1),
                   borderBottom: "none",
-                  fontWeight: 500,
+                  fontWeight: theme.typography.fontWeightMedium,
                 }}
               >
                 Multiplier
               </TableCell>
               <TableCell
                 sx={{
-                  color: "var(--text-gray)",
-                  padding: "8px",
+                  color: theme.palette.text.secondary,
+                  padding: theme.spacing(1),
                   borderBottom: "none",
-                  fontWeight: 500,
+                  fontWeight: theme.typography.fontWeightMedium,
                 }}
               >
                 Payout

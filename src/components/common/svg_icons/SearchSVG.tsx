@@ -1,7 +1,7 @@
 import React from "react";
 
 function SearchSVG({
-  color = "var(--white)",
+  color = "currentColor",
   size = 24,
 }: {
   color?: string;
@@ -27,7 +27,7 @@ function SearchSVG({
         >
           <path
             d="M11.6 19.2C15.7974 19.2 19.2 15.7974 19.2 11.6C19.2 7.40264 15.7974 4 11.6 4C7.40264 4 4 7.40264 4 11.6C4 15.7974 7.40264 19.2 11.6 19.2Z"
-            stroke="#808080"
+            stroke={color}
             stroke-width="1.5"
           />
           <path

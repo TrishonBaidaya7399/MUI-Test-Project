@@ -1,4 +1,31 @@
+/* globals.css - cleaned according to client rules */
+
+/* Reset margins, paddings, and box-sizing */
 html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Fonts - keep only font imports or 3rd-party necessities */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Third-party necessities (if any) */
+/* Example: storybook or other vendor CSS imports could stay here */
+
+
+
+
+/* html,
 body {
   margin: 0;
   padding: 0;
@@ -215,4 +242,4 @@ a {
 .footer-items {
   padding: 0 !important;
   
-}
+} */

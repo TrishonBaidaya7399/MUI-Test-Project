@@ -4,9 +4,10 @@ import { Box, Toolbar, useTheme, useMediaQuery } from "@mui/material";
 import AppHeader from "../components/layout/app-header";
 import AppSidebar from "../components/layout/app-sidebar";
 import { useSidebarStore } from "@/store/sidebar-store";
+import { theme } from "@/theme/theme";
 
-const drawerWidth = 240;
-const collapsedDrawerWidth = 64;
+const drawerWidth = theme.spacing(30);
+const collapsedDrawerWidth = theme.spacing(8);
 
 interface ClientLayoutWrapperProps {
   children: React.ReactNode;
@@ -24,7 +25,7 @@ export default function ClientLayoutWrapper({
     !isMobile && collapsed && !hovered ? collapsedDrawerWidth : drawerWidth;
 
   return (
-    <Box sx={{ display: "flex", minHeight: "100vh"}}>
+    <Box sx={{ display: "flex", minHeight: "100vh" }}>
       <AppHeader />
       <AppSidebar />
 
@@ -32,8 +33,8 @@ export default function ClientLayoutWrapper({
         component="main"
         sx={{
           flexGrow: 1,
-          width: { xs: '100%',lg: `calc(100% - ${currentDrawerWidth}px)` },
-          backgroundColor: "var(--background)",
+          width: { xs: "100%", lg: `calc(100% - ${currentDrawerWidth})` },
+          backgroundColor: theme.palette.background.default,
           minHeight: "100vh",
           transition: theme.transitions.create("width", {
             easing: theme.transitions.easing.sharp,
@@ -42,7 +43,9 @@ export default function ClientLayoutWrapper({
         }}
       >
         <Toolbar />
-        <Box sx={{ p: { xs: 1, sm: 3 } }}>{children}</Box>
+        <Box sx={{ p: { xs: theme.spacing(1), sm: theme.spacing(3) } }}>
+          {children}
+        </Box>
       </Box>
     </Box>
   );

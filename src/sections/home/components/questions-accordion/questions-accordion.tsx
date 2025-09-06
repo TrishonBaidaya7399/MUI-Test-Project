@@ -81,7 +81,7 @@ const QuestionsAccordion = ({ questions = questionsData.questions }) => {
               component="span"
               sx={{
                 color: "var(--white)",
-                fontWeight: 500,
+                fontWeight: theme.typography.fontWeightMedium,
                 fontSize: "16px",
                
               }}

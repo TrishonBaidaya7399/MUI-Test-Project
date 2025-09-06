@@ -6,35 +6,31 @@ import {
   Button,
   Box,
   useMediaQuery,
-  useTheme,
 } from "@mui/material";
-import { Icon } from "@iconify/react";
 import AnimatedHamburger from "../ui/animated-hamburger";
 import { useSidebarStore } from "@/store/sidebar-store";
 import Image from "next/image";
+import { theme } from "@/theme/theme";
 
-const drawerWidth = 240;
-const collapsedDrawerWidth = 76;
+  const drawerWidth = theme.spacing(30);
+  const collapsedDrawerWidth = theme.spacing(9.5);
 
 export default function AppHeader() {
-  const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
-  const { mobileOpen, collapsed, hovered, toggleMobileOpen } =
-    useSidebarStore();
-
+  const { mobileOpen, collapsed, hovered, toggleMobileOpen } = useSidebarStore();
   const currentDrawerWidth =
     !isMobile && collapsed && !hovered ? collapsedDrawerWidth : drawerWidth;
-
+    
   return (
     <AppBar
       position="fixed"
       sx={{
-        width: { lg: `calc(100% - ${currentDrawerWidth}px)`, xs: '100%' },
+        width: { lg: `calc(100% - ${currentDrawerWidth}px)`, xs: "100%" },
 
         ml: { lg: `${currentDrawerWidth}px` },
         zIndex: theme.zIndex.drawer - 1,
-        backgroundColor: "var(--background-2)",
+        backgroundColor: theme.palette.background.paper,
         borderBottom: "none",
         transition: theme.transitions.create(["width", "margin"], {
           easing: theme.transitions.easing.sharp,
@@ -42,18 +38,16 @@ export default function AppHeader() {
         }),
       }}
     >
-      <Toolbar
-        sx={{ justifyContent: "space-between", py: "16px" }}
-        className="app-container"
-      >
+     <Toolbar sx={{ justifyContent: "space-between", py: theme.spacing(2) }} className="app-container">
+
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box
             sx={{
-              height: "32px",
-              width: "32px",
-              borderRadius: "8px",
-              border: "2px solid var(--white-3)",
-              mr: 2,
+              height: theme.spacing(4),
+              width: theme.spacing(4),
+              borderRadius: theme.shape.borderRadius,
+              border: `2px solid ${theme.palette.text.secondary}`,
+              mr: theme.spacing(2),
             }}
           >
             <Image
@@ -72,9 +66,9 @@ export default function AppHeader() {
             noWrap
             component="div"
             sx={{
-              fontWeight: 600,
-              color: "var(--white)",
-              fontSize: "1.1rem",
+              fontWeight: theme.typography.fontWeightBold,
+              color: theme.palette.common.white,
+            fontSize: theme.typography.h6.fontSize,
               display: { lg: "block", xs: "none" },
             }}
           >
@@ -82,17 +76,17 @@ export default function AppHeader() {
           </Typography>
         </Box>
 
-        <Box sx={{ display: "flex", gap: "16px" }}>
+        <Box sx={{ display: "flex", gap: theme.spacing(2) }}>
           <Button
             variant="outlined"
             size="large"
             sx={{
-              color: "var(--white)",
+              color: theme.palette.common.white,
               textTransform: "none",
-              borderRadius: 1,
-              border: "2px solid var(--white-3)",
-              px: 3,
-              backgroundColor: "var(--background-3)",
+              borderRadius: theme.shape.borderRadius,
+              border: `2px solid ${theme.palette.text.secondary}`,
+              px: theme.spacing(3),
+              backgroundColor: theme.palette.background.default,
               "&:hover": {
                 backgroundColor: "transparent",
               },
@@ -104,25 +98,24 @@ export default function AppHeader() {
             variant="contained"
             size="large"
             sx={{
-              backgroundColor: "var(--white)",
-              color: "var(--text-black)",
+              backgroundColor: theme.palette.common.white,
+              color: theme.palette.text.primary,
               textTransform: "none",
-              borderRadius: 1,
-              px: 3,
+              borderRadius: theme.shape.borderRadius,
+              px: theme.spacing(3),
               "&:hover": {
-                backgroundColor: "var(--tertiary)",
+                backgroundColor: theme.palette.action.hover,
               },
             }}
           >
             Register
           </Button>
           {isMobile && (
-            <Box sx={{ mr: 2 }}>
+            <Box sx={{ mr: theme.spacing(2) }}>
               <AnimatedHamburger
                 isOpen={mobileOpen}
                 onClick={toggleMobileOpen}
-                color="var(--white)"
-                size={24}
+                color={theme.palette.common.white}
               />
             </Box>
           )}

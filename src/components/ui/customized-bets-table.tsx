@@ -30,7 +30,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
     padding: { xs: "8px 4px", sm: "8px" },
-    fontWeight: 500,
+    fontWeight: theme.typography.fontWeightMedium,
     whiteSpace: "nowrap",
   },
   [`&.${tableCellClasses.body}`]: {
