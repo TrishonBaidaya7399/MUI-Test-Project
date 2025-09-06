@@ -1,6 +1,7 @@
 import React from "react";
 
 function EthereumSVG() {
+  const uid = React.useId();
   return (
       <svg
         width="16"
@@ -9,7 +10,7 @@ function EthereumSVG() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clipPath="url(#clip0_1_546)">
+        <g clipPath={`url(#${uid}-clip0_1_546)`}>
           <path
             d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"
             fill="#328332"
@@ -39,7 +40,7 @@ function EthereumSVG() {
           />
         </g>
         <defs>
-          <clipPath id="clip0_1_546">
+          <clipPath id={`${uid}-clip0_1_546`}>
             <rect width="16" height="16" fill="white" />
           </clipPath>
         </defs>
