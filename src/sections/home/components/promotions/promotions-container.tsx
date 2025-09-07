@@ -62,7 +62,7 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
   useEffect(() => {
     checkScroll();
   }, []);
-
+  // new theme implemented
   return (
     <Box
       sx={{ mb: theme.spacing(3.75), width: "100%", boxSizing: "border-box" }}
