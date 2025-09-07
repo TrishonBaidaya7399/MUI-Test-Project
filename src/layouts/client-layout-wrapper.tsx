@@ -19,7 +19,6 @@ export default function ClientLayoutWrapper({
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const { collapsed, hovered } = useSidebarStore();
-
   const currentDrawerWidth =
     !isMobile && collapsed && !hovered ? collapsedDrawerWidth : drawerWidth;
 
