@@ -34,7 +34,7 @@ export default function AppHeader() {
 
         ml: { lg: `${currentDrawerWidth}px` },
         zIndex: theme.zIndex.drawer - 1,
-        backgroundColor: "var(--background-2)",
+        backgroundColor: theme.palette.background.secondary,
         borderBottom: "none",
         transition: theme.transitions.create(["width", "margin"], {
           easing: theme.transitions.easing.sharp,
@@ -104,7 +104,7 @@ export default function AppHeader() {
             variant="contained"
             size="large"
             sx={{
-              backgroundColor: "var(--white)",
+              backgroundColor: theme.palette.background.white,
               color: "var(--text-black)",
               textTransform: "none",
               borderRadius: 1,
