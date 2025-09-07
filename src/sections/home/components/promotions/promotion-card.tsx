@@ -41,7 +41,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
           <Typography
             sx={{
               background: theme.palette.background.badge,
-              borderRadius: 2,
+              borderRadius: theme.spacing(0.25),
               height: theme.spacing(4),
               textAlign: "center",
               padding: theme.spacing(0.5, 1),
@@ -87,7 +87,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
       </Box>
       <Box
         sx={{
-          borderRadius: 2,
+          borderRadius: theme.spacing(0.25),
           height: theme.spacing(17.5),
           width: theme.spacing(17.5),
           minWidth: theme.spacing(17.5),

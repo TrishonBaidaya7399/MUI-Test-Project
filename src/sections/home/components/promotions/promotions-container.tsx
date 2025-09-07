@@ -107,7 +107,7 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
               },
             }}
           >
-            <Icon icon="mdi:chevron-left"  width={20} height={20} />
+            <Icon icon="mdi:chevron-left"  width={theme.spacing(2.5)} height={theme.spacing(2.5)} />
           </IconButton>
           <IconButton
             onClick={() => scroll("right")}
@@ -129,7 +129,7 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
               },
             }}
           >
-            <Icon icon="mdi:chevron-right"  width={20} height={20} />
+            <Icon icon="mdi:chevron-right"  width={theme.spacing(2.5)} height={theme.spacing(2.5)} />
           </IconButton>
         </Box>
       </Box>
