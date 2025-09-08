@@ -11,7 +11,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
     <Box
       sx={{
         borderRadius: theme.spacing(1.25),
-        background: theme.palette.background.secondary,
+        bgcolor: theme.palette.background.secondary,
         p: { xs: theme.spacing(2), sm: theme.spacing(3) },
         display: "flex",
         flexDirection: "row",
@@ -19,7 +19,6 @@ function PromotionCard({ item }: { item: PromotionItem }) {
         justifyContent: "space-between",
         gap: theme.spacing(2),
         width: "100%",
-        minWidth: { xs: theme.spacing(37.5), sm: theme.spacing(49)},
         maxWidth: { xs: theme.spacing(37.5), sm: theme.spacing(49)},
         flexShrink: 0,
       }}
@@ -40,7 +39,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
         >
           <Typography
             sx={{
-              background: theme.palette.background.badge,
+              bgcolor: theme.palette.background.badge,
               borderRadius: 2,
               height: theme.spacing(4),
               textAlign: "center",
@@ -67,7 +66,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
           <Typography
             sx={{
               fontSize: theme.typography.body2.fontSize,
-              color: theme.typography.body2.color,
+              color: theme.palette.primary.bodyText,
             }}
           >
             {item?.subTitle}

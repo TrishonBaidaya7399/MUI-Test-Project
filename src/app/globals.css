@@ -19,3 +19,58 @@ a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.55)
 }
+
+.app-container {
+  width: 100%;
+  max-width: 1232px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px; 
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .app-container {
+    padding: 0 16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 16px;
+  }
+}
+@media (max-width: 512px) {
+  .app-container {
+    padding: 0 8px;
+  }
+}
+@media (max-width: 400px) {
+  .app-container {
+    padding: 0 8px;
+  }
+}
+
+.bg-yellow-gradient {
+  background: linear-gradient(var(--yellow), var(--yellow-light));
+}
+.mui-1dybbl5-MuiChip-label {
+  padding: 0 !important;
+}
+.mui-14vsv3w {
+  padding: 0 !important;
+}
+.Mui-expanded {
+  .MuiSvgIcon-root {
+    color: var(--white);
+  }
+}
+a {
+  list-style: none;
+  color: currentColor;
+  text-decoration: none;
+}
+.footer-items {
+  padding: 0 !important;
+  
+}

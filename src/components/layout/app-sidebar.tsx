@@ -8,7 +8,6 @@ import {
   ListItemText,
   Box,
   Button,
-  useTheme,
   useMediaQuery,
   Collapse,
 } from "@mui/material";
@@ -25,8 +24,8 @@ import TrophySVG from "../common/svg_icons/TroffeeSVG";
 import BlogSVG from "../common/svg_icons/BlogSVG";
 import ForumSVG from "../common/svg_icons/ForumSVG";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useTheme } from "@mui/material/styles";
 
-const drawerWidth = 240;
 
 interface MenuItem {
   text: string;
@@ -65,11 +64,12 @@ const menuItems2: MenuItem[] = [
 
 export default function AppSidebar() {
   const theme = useTheme();
+  const drawerWidth = 240;
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
   const { mobileOpen, setMobileOpen } = useSidebarStore();
-
+  
   const handleItemClick = (itemText: string) => {
     if (expandedItems.includes(itemText)) {
       setExpandedItems(expandedItems.filter((item) => item !== itemText));
@@ -78,8 +78,8 @@ export default function AppSidebar() {
     }
   };
 
-  const isExpanded = true; // Always expanded on desktop, mobile only when open
-  const currentWidth = drawerWidth; // Fixed width, no collapse on desktop
+  const isExpanded = true;
+  const currentWidth = drawerWidth;
 
   const drawer = (
     <Box
@@ -87,17 +87,17 @@ export default function AppSidebar() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "var(--background-1)",
-        color: "var(--white)",
+        bgcolor: theme.palette.background.bgSideBar,
+        color: theme.palette.primary.contrastText,
       }}
     >
-      <Box sx={{ p: 2 }}>
+      <Box sx={{ p: theme.spacing(2) }}>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            gap: "12px",
+            gap: theme.spacing(1.5),
             width: "100%",
           }}
         >
@@ -105,7 +105,7 @@ export default function AppSidebar() {
             <AnimatedHamburger
               isOpen={mobileOpen}
               onClick={() => setMobileOpen(!mobileOpen)}
-              color="var(--white)"
+              color={theme.palette.primary.contrastText}
               size={30}
             />
           ) : (
@@ -117,24 +117,24 @@ export default function AppSidebar() {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: 1,
+                gap: theme.spacing(1),
               }}
             >
               <Button
-                variant="contained"
+                variant="contained" 
                 sx={{
-                  backgroundColor: "var(--white-2)",
-                  color: "var(--white)",
+                  bgcolor: theme.palette.background.button,
+                  color: theme.palette.primary.contrastText,
                   textTransform: "none",
-                  borderRadius: 1,
-                  fontSize: "0.875rem",
+                  borderRadius: theme.spacing(1),
+                  fontSize: theme.spacing(1.75),
                   fontWeight: 500,
                   minWidth: "auto",
-                  height: "44px",
-                  px: 2,
+                  height: theme.spacing(5.5),
+                  px: theme.spacing(2),
                   "&:hover": {
-                    backgroundColor: "var(--secondary)",
-                    color: "var(--text-black)",
+                    bgcolor: theme.palette.background.bgLight,
+                    color: theme.palette.background.black,
                   },
                 }}
               >
@@ -143,18 +143,18 @@ export default function AppSidebar() {
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: "var(--white-2)",
-                  color: "var(--white)",
+                  bgcolor: theme.palette.background.button,
+                  color: theme.palette.primary.contrastText,
                   textTransform: "none",
-                  borderRadius: 1,
-                  height: "44px",
-                  fontSize: "0.875rem",
+                  borderRadius: theme.spacing(1),
+                  height: theme.spacing(5.5),
+                  fontSize: theme.spacing(1.75),
                   fontWeight: 500,
                   minWidth: "auto",
-                  px: 2,
+                  px: theme.spacing(2),
                   "&:hover": {
-                    backgroundColor: "var(--secondary)",
-                    color: "var(--text-black)",
+                    bgcolor: theme.palette.background.bgLight,
+                    color: theme.palette.background.black,
                   },
                 }}
               >
@@ -168,16 +168,16 @@ export default function AppSidebar() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: "8px",
-          padding: "16px",
+          gap: theme.spacing(1),
+          padding: theme.spacing(2),
         }}
       >
         <List
           sx={{
-            flexGrow: 1,
-            p: 0,
-            backgroundColor: "var(--background-3)",
-            borderRadius: 1,
+            flexGrow:1,
+            p: theme.spacing(0),
+            bgcolor: theme.palette.background.black,
+            borderRadius: theme.spacing(1),
           }}
         >
           {menuItems1.map((item) => (
@@ -186,19 +186,19 @@ export default function AppSidebar() {
                 <ListItemButton
                   onClick={() => item.children && handleItemClick(item.text)}
                   sx={{
-                    p: "10px",
-                    borderRadius: 1,
-                    minHeight: 48,
+                    p: theme.spacing(1.25),
+                    borderRadius: theme.spacing(1),
+                    minHeight: theme.spacing(6),
                     justifyContent: isExpanded ? "initial" : "center",
                     "&:hover": {
-                      backgroundColor: "var(--white-2)",
+                      bgcolor: theme.palette.background.black,
                     },
                   }}
                 >
                   <ListItemIcon
                     sx={{
-                      minWidth: isExpanded ? 40 : "auto",
-                      mr: isExpanded ? 1 : 0,
+                      minWidth: isExpanded ? theme.spacing(5) : "auto",
+                      mr: isExpanded ? theme.spacing(1) : theme.spacing(0),
                       justifyContent: "center",
                     }}
                   >
@@ -206,8 +206,8 @@ export default function AppSidebar() {
                       <Icon
                         icon={item.icon}
                         style={{
-                          fontSize: 20,
-                          color: "var(--text-white)",
+                          fontSize: theme.spacing(2.5),
+                          color: theme.palette.primary.contrastText,
                         }}
                       />
                     ) : (
@@ -219,8 +219,8 @@ export default function AppSidebar() {
                       <ListItemText
                         primary={item.text}
                         primaryTypographyProps={{
-                          fontSize: "0.875rem",
-                          color: "var(--text-white)",
+                          fontSize: theme.spacing(1.75),
+                          color: theme.palette.primary.contrastText,
                           fontWeight: 400,
                         }}
                       />
@@ -231,7 +231,7 @@ export default function AppSidebar() {
                               ? "mdi:chevron-up"
                               : "mdi:chevron-down"
                           }
-                          style={{ color: "var(--text-white)", fontSize: 20 }}
+                          style={{ color: theme.palette.primary.contrastText, fontSize: theme.spacing(2.5) }}
                         />
                       )}
                     </>
@@ -250,21 +250,21 @@ export default function AppSidebar() {
                       <ListItem key={child.text} disablePadding>
                         <ListItemButton
                           sx={{
-                            pl: 4,
-                            mx: 1,
-                            borderRadius: 1,
+                            pl: theme.spacing(4),
+                            mx: theme.spacing(1),
+                            borderRadius: theme.spacing(1),
                             "&:hover": {
-                              backgroundColor: "var(--white-2)",
+                              bgcolor: theme.palette.background.black,
                             },
                           }}
                         >
-                          <ListItemIcon sx={{ minWidth: 32 }}>
+                          <ListItemIcon sx={{ minWidth: theme.spacing(4) }}>
                             {typeof child.icon === "string" ? (
                               <Icon
                                 icon={child.icon}
                                 style={{
-                                  fontSize: 20,
-                                  color: "var(--text-white)",
+                                  fontSize: theme.spacing(2.5),
+                                  color: theme.palette.primary.contrastText,
                                 }}
                               />
                             ) : (
@@ -274,8 +274,8 @@ export default function AppSidebar() {
                           <ListItemText
                             primary={child.text}
                             primaryTypographyProps={{
-                              fontSize: "0.8rem",
-                              color: "var(--text-white)",
+                              fontSize: theme.spacing(1.6),
+                              color: theme.palette.primary.contrastText,
                             }}
                           />
                         </ListItemButton>
@@ -289,10 +289,10 @@ export default function AppSidebar() {
         </List>
         <List
           sx={{
-            flexGrow: 1,
-            py: 0,
-            backgroundColor: "var(--background-3)",
-            borderRadius: 1,
+            flexGrow:1,
+            py: theme.spacing(0),
+            bgcolor: theme.palette.background.black,
+            borderRadius: theme.spacing(1),
           }}
         >
           {menuItems2.map((item) => (
@@ -301,19 +301,19 @@ export default function AppSidebar() {
                 <ListItemButton
                   onClick={() => item.children && handleItemClick(item.text)}
                   sx={{
-                    p: "10px",
-                    borderRadius: 1,
-                    minHeight: 48,
+                    p: theme.spacing(1.25),
+                    borderRadius: theme.spacing(1),
+                    minHeight: theme.spacing(6),
                     justifyContent: isExpanded ? "initial" : "center",
                     "&:hover": {
-                      backgroundColor: "var(--white-2)",
+                      bgcolor: theme.palette.background.black,
                     },
                   }}
                 >
                   <ListItemIcon
                     sx={{
-                      minWidth: isExpanded ? 40 : "auto",
-                      mr: isExpanded ? 1 : 0,
+                      minWidth: isExpanded ? theme.spacing(5) : "auto",
+                      mr: isExpanded ? theme.spacing(1) : theme.spacing(0),
                       justifyContent: "center",
                     }}
                   >
@@ -321,8 +321,8 @@ export default function AppSidebar() {
                       <Icon
                         icon={item.icon}
                         style={{
-                          fontSize: 20,
-                          color: "var(--text-white)",
+                          fontSize: theme.spacing(2.5),
+                          color: theme.palette.primary.contrastText,
                         }}
                       />
                     ) : (
@@ -334,8 +334,8 @@ export default function AppSidebar() {
                       <ListItemText
                         primary={item.text}
                         primaryTypographyProps={{
-                          fontSize: "0.875rem",
-                          color: "var(--text-white)",
+                          fontSize: theme.spacing(1.75),
+                          color: theme.palette.primary.contrastText,
                           fontWeight: 400,
                         }}
                       />
@@ -346,7 +346,7 @@ export default function AppSidebar() {
                               ? "mdi:chevron-up"
                               : "mdi:chevron-down"
                           }
-                          style={{ color: "var(--text-white)", fontSize: 20 }}
+                          style={{ color: theme.palette.primary.contrastText, fontSize: theme.spacing(2.5) }}
                         />
                       )}
                     </>
@@ -365,21 +365,21 @@ export default function AppSidebar() {
                       <ListItem key={child.text} disablePadding>
                         <ListItemButton
                           sx={{
-                            pl: 4,
-                            mx: 1,
-                            borderRadius: 1,
+                            pl: theme.spacing(4),
+                            mx: theme.spacing(1),
+                            borderRadius: theme.spacing(1),
                             "&:hover": {
-                              backgroundColor: "var(--white-2)",
+                              bgcolor: theme.palette.background.black,
                             },
                           }}
                         >
-                          <ListItemIcon sx={{ minWidth: 32 }}>
+                          <ListItemIcon sx={{ minWidth: theme.spacing(4) }}>
                             {typeof child.icon === "string" ? (
                               <Icon
                                 icon={child.icon}
                                 style={{
-                                  fontSize: 20,
-                                  color: "var(--text-white)",
+                                  fontSize: theme.spacing(2.5),
+                                  color: theme.palette.primary.contrastText,
                                 }}
                               />
                             ) : (
@@ -389,8 +389,8 @@ export default function AppSidebar() {
                           <ListItemText
                             primary={child.text}
                             primaryTypographyProps={{
-                              fontSize: "0.8rem",
-                              color: "var(--text-white)",
+                              fontSize: theme.spacing(1.6),
+                              color: theme.palette.primary.contrastText,
                             }}
                           />
                         </ListItemButton>
@@ -409,7 +409,7 @@ export default function AppSidebar() {
   return (
     <Box
       component="nav"
-      sx={{ width: { lg: currentWidth }, flexShrink: { lg: 0 } }}
+      sx={{ width: { lg: currentWidth }, flexShrink: { lg: theme.spacing(0) } }}
     >
       {/* Mobile drawer */}
       <Drawer
@@ -424,7 +424,7 @@ export default function AppSidebar() {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            backgroundColor: "var(--secondary)",
+            bgcolor: theme.palette.background.bgLight,
             borderRight: "none",
           },
         }}
@@ -440,7 +440,7 @@ export default function AppSidebar() {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
-            backgroundColor: "#2a2a2a",
+            bgcolor: theme.palette.background.bgSideBar,
             borderRight: "none",
             zIndex: theme.zIndex.drawer,
           },
