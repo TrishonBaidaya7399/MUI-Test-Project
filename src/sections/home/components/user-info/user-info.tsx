@@ -2,6 +2,8 @@ import { Box, LinearProgress, Avatar, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { useTheme } from "@mui/material/styles";
+
 const userData = {
   username: "Test User",
   vipProgress: 50.0,
@@ -11,25 +13,30 @@ const userData = {
 };
 
 export default function UserInfo() {
+  const theme = useTheme();
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "start",
         flexDirection: "column",
-        width: {xl: '33%', lg: '33%', xs: '100%'},
+        width: { xl: "33%", lg: "33%", xs: "100%" },
       }}
     >
       <Box sx={{ flexGrow: 1, width: "100%" }}>
-        <Typography sx={{ marginBottom: "32px" }} variant="h4" component="div">
+        <Typography
+          sx={{ marginBottom: theme.spacing(4) }}
+          variant="h4"
+          component="div"
+        >
           {userData?.username}
         </Typography>
         <Box
           sx={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 2,
-            marginBottom: "25px",
+            gap: theme.spacing(2),
+            marginBottom: theme.spacing(3.125),
             width: "100%",
           }}
         >
@@ -39,7 +46,7 @@ export default function UserInfo() {
               textWrap: "nowrap",
               display: "flex",
               alignItems: "center",
-              gap: "12px",
+              gap: theme.spacing(1.5),
             }}
           >
             Your VIP Progress
@@ -51,7 +58,10 @@ export default function UserInfo() {
               justifyContent: "center",
             }}
           >
-            <Icon icon="oui:sort-right" style={{ fontSize: 16 }} />
+            <Icon
+              icon="oui:sort-right"
+              style={{ fontSize: theme.spacing(2) }}
+            />
           </Box>
           <Box
             sx={{
@@ -61,13 +71,20 @@ export default function UserInfo() {
           >
             <Typography
               variant="body2"
-              sx={{ display: "flex", flexDirection: "row", gap: 1 }}
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                gap: theme.spacing(1),
+              }}
             >
               {userData?.progress}%{" "}
               <Icon
-                color="var(--bg-gray)"
+                color={theme.palette.primary.contrastText}
                 icon="material-symbols:info-rounded"
-                style={{ fontSize: 16, color: "var(--bg-gray)" }}
+                style={{
+                  fontSize: theme.spacing(2),
+                  color: theme.palette.primary.contrastText,
+                }}
               />
             </Typography>
           </Box>
@@ -78,15 +95,14 @@ export default function UserInfo() {
         value={userData?.progress}
         sx={{
           width: "100%",
-          height: "12px",
-          marginBottom: "25px",
-          borderRadius: 4,
+          height: theme.spacing(1.5),
+          marginBottom: theme.spacing(3.125),
+          borderRadius: theme.spacing(0.5),
           "& .MuiLinearProgress-bar": {
-            background:
-              "linear-gradient(to right, var(--yellow-light), var(--yellow))",
+            background: theme.palette.gradients.linearYellow,
           },
           "&.MuiLinearProgress-root": {
-            background: "var(--background-2)",
+            background: theme.palette.background.bgSideBar,
           },
         }}
       />
@@ -95,8 +111,8 @@ export default function UserInfo() {
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           width: "100%",
-          gap: 1,
-          mt: 0.5,
+          gap: theme.spacing(1),
+          mt: theme.spacing(0.5),
         }}
       >
         <Box
@@ -104,7 +120,7 @@ export default function UserInfo() {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            gap: 1,
+            gap: theme.spacing(1),
           }}
         >
           <StarBorderIcon fontSize={"small"} />
@@ -116,18 +132,18 @@ export default function UserInfo() {
             justifyContent: "center",
           }}
         >
-          <Icon icon="oui:sort-right" style={{ fontSize: 16 }} />
+          <Icon icon="oui:sort-right" style={{ fontSize: theme.spacing(2) }} />
         </Box>
         <Box
           sx={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            gap: 1,
+            gap: theme.spacing(1),
             justifyContent: "end",
           }}
         >
-          <StarIcon sx={{ color: "var(--yellow)" }} fontSize={"small"} />
+          <StarIcon sx={{ color: theme.palette.primary.contrastText }} fontSize={"small"} />
           <Typography variant="body2">{userData.nextLevel}</Typography>
         </Box>
       </Box>
