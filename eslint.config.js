@@ -2,6 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import pluginReact from "eslint-plugin-react";
+import tsParser from "@typescript-eslint/parser";
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
@@ -9,20 +10,20 @@ export default [
     files: ["**/*.{js,ts,jsx,tsx}"],
 
     languageOptions: {
-      parser: "@typescript-eslint/parser", // TypeScript parser
-      globals: globals.browser, // Browser globals
+      parser: tsParser,
+      globals: globals.browser,
     },
 
     plugins: {
       react: pluginReact,
       "@typescript-eslint": tsPlugin,
     },
-
+    settings: {
+      react: {
+        version: "detect", // ✅ automatically detects React version
+      },
     ignores: [".config/*", "node_modules"],
 
-    rules: {
-      // Merge recommended rules
-      ...pluginJs.configs.recommended.rules,
       ...tsPlugin.configs.recommended.rules,
       ...pluginReact.configs.flat.recommended.rules,
 
