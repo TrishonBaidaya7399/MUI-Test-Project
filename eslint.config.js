@@ -1,21 +1,37 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 import pluginReact from "eslint-plugin-react";
+import tsParser from "@typescript-eslint/parser";
 
-/** @type {import('eslint').Linter.Config[]} */
+/** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
   {
+    files: ["**/*.{js,ts,jsx,tsx}"],
+
+    languageOptions: {
+      parser: tsParser,
+      globals: globals.browser,
+    },
+
+    plugins: {
+      react: pluginReact,
+      "@typescript-eslint": tsPlugin,
+    },
+    settings: {
+      react: {
+        version: "detect", // ✅ automatically detects React version
+      },
+    },
     ignores: [".config/*", "node_modules"],
-  },
-  {
-    plugins: ["regexp"],
+
     rules: {
+      // Merge recommended rules
+      ...pluginJs.configs.recommended.rules,
+      ...tsPlugin.configs.recommended.rules,
+      ...pluginReact.configs.flat.recommended.rules,
+
+      // Your custom rules
       "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "no-unused-vars": "off",
@@ -24,8 +40,8 @@ export default [
       "no-case-declarations": "off",
       "react/no-unknown-property": "off",
       curly: "error",
-      "react/jsx-uses-react": "off", 
-      "react/react-in-jsx-scope": "off", 
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
       "@typescript-eslint/no-require-imports": "warn",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "react/no-children-prop": "off",
