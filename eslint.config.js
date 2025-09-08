@@ -22,12 +22,8 @@ export default [
       react: {
         version: "detect", // ✅ automatically detects React version
       },
-    },
     ignores: [".config/*", "node_modules"],
 
-    rules: {
-      // Merge recommended rules
-      ...pluginJs.configs.recommended.rules,
       ...tsPlugin.configs.recommended.rules,
       ...pluginReact.configs.flat.recommended.rules,
 

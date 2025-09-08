@@ -1,10 +1,11 @@
 "use client";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import { Box, Typography, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useRef, useState, useEffect } from "react";
+import { useTheme } from "@mui/material/styles";
 
-const PromotionCard = dynamic(() => import('./promotion-card'));
+const PromotionCard = dynamic(() => import("./promotion-card"));
 export interface PromotionItem {
   type: string;
   title: string;
@@ -21,6 +22,7 @@ interface PromotionsProps {
 }
 
 export default function PromotionsContainer({ title, items }: PromotionsProps) {
+  const theme = useTheme();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -60,20 +62,26 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
   useEffect(() => {
     checkScroll();
   }, []);
-
+  // new theme implemented
   return (
-    <Box sx={{ mb: "30px", width: "100%", boxSizing: "border-box" }} className='app-container'>
+    <Box
+      sx={{ mb: theme.spacing(3.75), width: "100%", boxSizing: "border-box" }}
+      className="app-container"
+    >
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          mb: 2,
+          mb: theme.spacing(2),
         }}
       >
         <Typography
           variant="h6"
-          sx={{ color: "var(--white)", fontSize: "18px" }}
+          sx={{
+            color: theme.palette.primary.contrastText,
+            fontSize: theme.spacing(2.25),
+          }}
         >
           {title}
         </Typography>
@@ -82,38 +90,46 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
             sx={{
-              color: canScrollLeft ? "var(--white)" : "var(--placeholder)",
-              borderRadius: "4px",
-              border: "1px solid var(--white-3)",
-              padding: "0px",
-              height: "20px",
-              width: "20px",
-              marginRight: "8px",
+              color: canScrollLeft
+                ? theme.palette.primary.contrastText
+                : theme.palette.background.badge,
+              borderRadius: theme.spacing(0.5),
+              border: `${theme.spacing(0.125)} solid ${
+                theme.palette.primary.contrastText
+              }`,
+              padding: 0,
+              height: theme.spacing(2.5),
+              width: theme.spacing(2.5),
+              marginRight: theme.spacing(1),
               "&:disabled": {
-                borderColor: "var(--placeholder)",
-                "& svg": { color: "var(--placeholder)" },
+                borderColor: theme.palette.background.badge,
+                "& svg": { color: theme.palette.background.badge },
               },
             }}
           >
-            <Icon icon="mdi:chevron-left" width={20} height={20} />
+            <Icon icon="mdi:chevron-left"  width={theme.spacing(2.5)} height={theme.spacing(2.5)} />
           </IconButton>
           <IconButton
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
             sx={{
-              color: canScrollRight ? "var(--white)" : "var(--placeholder)",
-              borderRadius: "4px",
-              border: "1px solid var(--white-3)",
-              padding: "0px",
-              height: "20px",
-              width: "20px",
+              color: canScrollRight
+                ? theme.palette.primary.contrastText
+                : theme.palette.background.badge,
+              borderRadius: theme.spacing(0.5),
+              border: `${theme.spacing(0.125)} solid ${
+                theme.palette.primary.contrastText
+              }`,
+              padding: 0,
+              height: theme.spacing(2.5),
+              width: theme.spacing(2.5),
               "&:disabled": {
-                borderColor: "var(--placeholder)",
-                "& svg": { color: "var(placeholder)" },
+                borderColor: theme.palette.background.badge,
+                "& svg": { color: theme.palette.background.badge },
               },
             }}
           >
-            <Icon icon="mdi:chevron-right" width={20} height={20} />
+            <Icon icon="mdi:chevron-right"  width={theme.spacing(2.5)} height={theme.spacing(2.5)} />
           </IconButton>
         </Box>
       </Box>
@@ -122,18 +138,18 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
         sx={{
           display: "flex",
           overflowX: "auto",
-          gap: "16px",
+          gap: theme.spacing(2),
           "&::-webkit-scrollbar": { display: "none" },
           scrollbarWidth: "none",
           width: "100%",
           boxSizing: "border-box",
           flexWrap: "nowrap",
           maxWidth: "100%",
-          "@media (max-width: 768px)": {
-            padding: "0 8px",
+          [theme.breakpoints.down("md")]: {
+            padding: theme.spacing(0, 1),
           },
-          "@media (max-width: 480px)": {
-            padding: "0 4px",
+          [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(0, 0.5),
           },
         }}
         onScroll={checkScroll}

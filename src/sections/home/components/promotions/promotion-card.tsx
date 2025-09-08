@@ -3,22 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { PromotionItem } from "./promotions-container";
+import { useTheme } from "@mui/material/styles";
 
 function PromotionCard({ item }: { item: PromotionItem }) {
+  const theme = useTheme();
   return (
     <Box
       sx={{
-        borderRadius: 1,
-        background: "var(--background-card)",
-        p: { xs: 2, sm: 3 },
+        borderRadius: theme.spacing(1.25),
+        background: theme.palette.background.secondary,
+        p: { xs: theme.spacing(2), sm: theme.spacing(3) },
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        gap: 2,
+        gap: theme.spacing(2),
         width: "100%",
-        minWidth: { xs: "300px", sm: "392px" },
-        maxWidth: { xs: "300px", sm: "392px" },
+        minWidth: { xs: theme.spacing(37.5), sm: theme.spacing(49)},
+        maxWidth: { xs: theme.spacing(37.5), sm: theme.spacing(49)},
         flexShrink: 0,
       }}
     >
@@ -27,7 +29,7 @@ function PromotionCard({ item }: { item: PromotionItem }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          height: '100%'
+          height: "100%",
         }}
       >
         <Box
@@ -38,15 +40,15 @@ function PromotionCard({ item }: { item: PromotionItem }) {
         >
           <Typography
             sx={{
-              background: "var(--white-2)",
-              borderRadius: 2,
-              height: '24px',
+              background: theme.palette.background.badge,
+              borderRadius: theme.spacing(0.25),
+              height: theme.spacing(4),
               textAlign: "center",
-              padding: "4px 8px",
-              fontSize: "12px",
-              fontWeight: "500",
-              width: 'fit-content',
-              color: "var(--white)",
+              padding: theme.spacing(0.5, 1),
+              fontSize: theme.spacing(1.5),
+              fontWeight: theme.typography.h3.fontWeight,
+              width: "fit-content",
+              color: theme.palette.primary.contrastText,
               mb: 2,
             }}
           >
@@ -54,18 +56,18 @@ function PromotionCard({ item }: { item: PromotionItem }) {
           </Typography>
           <Typography
             sx={{
-              fontSize: "16px",
-              fontWeight: "500",
-              color: "var(--white)",
-              mb: "4px",
+              fontSize: theme.typography.body1.fontSize,
+              fontWeight: theme.typography.h3.fontWeight,
+              color: theme.palette.primary.contrastText,
+              mb: theme.spacing(0.5),
             }}
           >
             {item?.title}
           </Typography>
           <Typography
             sx={{
-              fontSize: "14px",
-              color: "var(--text-gray)",
+              fontSize: theme.typography.body2.fontSize,
+              color: theme.typography.body2.color,
             }}
           >
             {item?.subTitle}
@@ -74,9 +76,9 @@ function PromotionCard({ item }: { item: PromotionItem }) {
         <Link href={`${item?.href}`} className="border-none">
           <Typography
             sx={{
-              fontSize: "14px",
-              color: "var(--white)",
-              fontWeight: "500",
+              fontSize: theme.typography.body2.fontSize,
+              color: theme.palette.primary.contrastText,
+              fontWeight: theme.typography.h3.fontWeight,
             }}
           >
             Read More
@@ -85,11 +87,10 @@ function PromotionCard({ item }: { item: PromotionItem }) {
       </Box>
       <Box
         sx={{
-          borderRadius: 2,
-          // border: "2px solid var(--white-3)",
-          height:'140px',
-          width: '140px',
-          minWidth: '140px',
+          borderRadius: theme.spacing(0.25),
+          height: theme.spacing(17.5),
+          width: theme.spacing(17.5),
+          minWidth: theme.spacing(17.5),
         }}
       >
         <Image
@@ -99,8 +100,6 @@ function PromotionCard({ item }: { item: PromotionItem }) {
           height={140}
           placeholder="blur"
           blurDataURL={item?.blurUrl}
-          style={{ objectFit: "cover", height: "100%", width: "100%" }}
-          sizes="(max-width: 480px) 120px, 140px"
         />
       </Box>
     </Box>
