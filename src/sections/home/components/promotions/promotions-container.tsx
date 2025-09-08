@@ -144,7 +144,6 @@ export default function PromotionsContainer({ title, items }: PromotionsProps) {
           width: "100%",
           boxSizing: "border-box",
           flexWrap: "nowrap",
-          maxWidth: "100%",
           [theme.breakpoints.down("md")]: {
             padding: theme.spacing(0, 1),
           },
